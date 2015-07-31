@@ -2,6 +2,8 @@
 
 use Deportes\Actividades\Actividad;
 use Deportes\Http\Controllers\Controller;
+use Deportes\Http\Requests\GuardarActividadRequest;
+use Illuminate\Support\Facades\Input;
 
 class ActividadesController extends Controller {
 
@@ -11,8 +13,25 @@ class ActividadesController extends Controller {
     }
 
     public function show(){
-       $actividad = new Actividad();
-        return view('actividades.reporte');
+       $actividades = Actividad::get();
+        return view('actividades.reporte', compact('actividades'));
+    }
 
+    public function edit(){
+        dd($_REQUEST);
+    }
+
+    public function crear(){
+
+        return view ('actividades.nuevo');
+
+    }
+
+    public function guardar(GuardarActividadRequest $request){
+       Actividad::create([
+           'nombre' => Input::get('nombre'),
+           'descripcion' => Input::get('descripcion')
+       ]);
+        return redirect()->route('actividad');
     }
 }

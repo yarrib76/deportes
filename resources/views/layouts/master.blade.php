@@ -18,6 +18,9 @@
     @include('partials.header.main')
 
     <div class="content">
+        <li></li>
+        <li></li>
+        <li></li>
         @yield('contenido')
     </div>
 

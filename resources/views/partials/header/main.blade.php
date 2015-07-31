@@ -2,5 +2,5 @@
 <div class="container-fluid">
         @include('partials.header.izquierda')
         @include('partials.header.derecha')
-    </div>
+</div>
 </nav>
