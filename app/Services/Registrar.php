@@ -1,6 +1,6 @@
-<?php namespace App\Services;
+<?php namespace Deportes\Services;
 
-use App\User;
+use Deportes\User;
 use Validator;
 use Illuminate\Contracts\Auth\Registrar as RegistrarContract;
 

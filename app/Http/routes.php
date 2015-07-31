@@ -13,9 +13,12 @@
 
 Route::get('/', 'WelcomeController@index');
 
-Route::get('home', 'HomeController@index');
+Route::get('home', 'Actividades\ActividadesController@show');
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
 ]);
+
+Route::get('actividad', ['as' => 'actividad', 'uses' => 'Actividades\ActividadesController@show']);
+
