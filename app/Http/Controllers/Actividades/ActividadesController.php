@@ -2,7 +2,7 @@
 
 use Deportes\Actividades\Actividad;
 use Deportes\Http\Controllers\Controller;
-use Deportes\Http\Requests\GuardarActividadRequest;
+use Deportes\Http\Requests\GuardarActividadesRequest;
 use Illuminate\Support\Facades\Input;
 
 class ActividadesController extends Controller {
@@ -27,7 +27,7 @@ class ActividadesController extends Controller {
 
     }
 
-    public function guardar(GuardarActividadRequest $request){
+    public function guardar(GuardarActividadesRequest $request){
        Actividad::create([
            'nombre' => Input::get('nombre'),
            'descripcion' => Input::get('descripcion')
