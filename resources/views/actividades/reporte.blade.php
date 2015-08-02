@@ -18,7 +18,10 @@
                                     <tr>
                                         <td>{{$actividad->nombre}}</td>
                                         <td>{{$actividad->descripcion}}</td>
-                                        <td><button type="submit" name="id" value="{{$actividad->id}}" class="btn btn-primary">Editar</button></td>
+                                        <td>
+                                            <button type="submit" name="id" value="{{$actividad->id}}" class="btn btn-primary">Editar</button>
+                                            {!! HTML::linkRoute('actividad.borrar', ' Borrar', $actividad->id , ['class' => 'btn btn-danger', 'data-method' => 'DELETE','data-confirm' => '¿Seguro desea archivar el movil ', 'rel' => 'nofollow']) !!}
+                                        </td>
                                     </tr>
                                     @endforeach
                             </table>

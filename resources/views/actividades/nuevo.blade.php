@@ -6,6 +6,8 @@
                 <div class="panel panel-primary">
                     <div class="panel-heading"><i class="fa fa-cog">Agregar Actividades</i></div>
                         <div class="panel-body">
+                            @include('errors.basic')
+
                             {!! Form::open(['class' => 'form-horizontal', 'route' => ['actividad.guardar'] ]) !!}
                                 @include('actividades.form')
                             <div class="col-sm-offset-3 col-sm-3">

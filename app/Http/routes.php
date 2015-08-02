@@ -10,6 +10,8 @@
 | and give it the controller to call when that URI is requested.
 |
 */
+use Illuminate\Support\Facades\Route;
+
 
 Route::get('/', 'Actividades\ActividadesController@show');
 
@@ -25,5 +27,4 @@ Route::get('actividad', ['as' => 'actividad', 'uses' => 'Actividades\Actividades
 Route::post('actividad/editar', ['as' => 'actividad.editar', 'uses' => 'Actividades\ActividadesController@edit']);
 Route::get('actividad/crear', ['as' => 'actividad.crear', 'uses' => 'Actividades\ActividadesController@crear']);
 Route::post('actividad/guardar', ['as' => 'actividad.guardar', 'uses' => 'Actividades\ActividadesController@guardar']);
-
-
+Route::get('actividad/borrar/{id}', ['as' => 'actividad.borrar', 'use' => 'Actividades\ActividadesController@borrar']);

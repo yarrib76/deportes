@@ -28,10 +28,15 @@ class ActividadesController extends Controller {
     }
 
     public function guardar(GuardarActividadesRequest $request){
-       Actividad::create([
+
+        Actividad::create([
            'nombre' => Input::get('nombre'),
            'descripcion' => Input::get('descripcion')
        ]);
         return redirect()->route('actividad');
+    }
+
+    public function borrar(){
+        dd('Eliminar');
     }
 }
