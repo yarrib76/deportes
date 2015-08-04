@@ -28,3 +28,7 @@ Route::resource('actividad','Actividades\ActividadesController');
 //Vista y ABM Proferores
 Route::resource('profesor', 'Profesores\ProfesoresController');
 
+//Vista y ABM Agenda
+
+Route::resource('agenda', 'Agenda\AgendaController');
+

@@ -1,5 +1,6 @@
 <?php namespace Deportes\Http\Controllers\Agenda;
 
+use Deportes\Agenda\Agenda;
 use Deportes\Http\Requests;
 use Deportes\Http\Controllers\Controller;
 
@@ -14,7 +15,8 @@ class AgendaController extends Controller {
 	 */
 	public function index()
 	{
-		//
+		$agendas = Agenda::get()->load('profesor','actividad','usuario');
+        return view('agenda.reporte', compact('agendas'));
 	}
 
 	/**
