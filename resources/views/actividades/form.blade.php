@@ -8,6 +8,14 @@
 
 <div class="form-group">
 
+    {!! Form::label('club', 'Club :', ['class' => 'col-sm-3 control-label']) !!}
+    <div class="col-sm-6">
+        {!! Form::input('club', 'club', null, ['id' => 'club', 'class' => 'form-control nombre', 'name' => 'club', 'placeholder' => 'Nombre del club'])  !!}
+    </div>
+</div>
+
+<div class="form-group">
+
     {!! Form::label('detalle', 'Detalle :', ['class' => 'col-sm-3 control-label']) !!}
     <div class="col-sm-6">
         {!! Form::input('detalle', 'detalle', null, ['id' => 'descripcion', 'class' => 'form-control', 'name' => 'descripcion'])  !!}

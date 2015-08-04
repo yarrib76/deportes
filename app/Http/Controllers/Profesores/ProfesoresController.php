@@ -1,19 +1,15 @@
-<?php namespace Deportes\Http\Controllers\Actividades;
+<?php namespace Deportes\Http\Controllers\Profesores;
 
 use Deportes\Actividades\Actividad;
 use Deportes\Http\Requests;
 use Deportes\Http\Controllers\Controller;
 
-use Deportes\Http\Requests\GuardarActividadesRequest;
+use Deportes\Profesores\Profesor;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 
-class ActividadesController extends Controller {
+class ProfesoresController extends Controller {
 
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
 	/**
 	 * Display a listing of the resource.
 	 *
@@ -21,8 +17,8 @@ class ActividadesController extends Controller {
 	 */
 	public function index()
 	{
-        $actividades = Actividad::get();
-        return view('actividades.reporte', compact('actividades'));
+        $profesores = Profesor::all()->load('actividad');
+        return view('profesores.reporte', compact('profesores'));
 	}
 
 	/**
@@ -32,7 +28,8 @@ class ActividadesController extends Controller {
 	 */
 	public function create()
 	{
-        return view ('actividades.nuevo');
+		$actividades = Actividad::get()->lists('nombre','id');
+        return view('profesores.nuevo', compact('actividades'));
 	}
 
 	/**
@@ -40,14 +37,14 @@ class ActividadesController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store(GuardarActividadesRequest $request)
+	public function store()
 	{
-        Actividad::create([
+        Profesor::create([
             'nombre' => Input::get('nombre'),
-            'club' => Input::get('club'),
-            'descripcion' => Input::get('descripcion')
+            'apellido' => Input::get('apellido'),
+            'actividad_id' => Input::get('actividad_id')
         ]);
-        return redirect()->route('actividad.index');
+        return redirect()->route('profesor.index');
 	}
 
 	/**
@@ -69,7 +66,7 @@ class ActividadesController extends Controller {
 	 */
 	public function edit($id)
 	{
-		//
+		dd('Editar al Profesor',$id);
 	}
 
 	/**
@@ -91,9 +88,9 @@ class ActividadesController extends Controller {
 	 */
 	public function destroy($id)
 	{
-        $profesor = Actividad::find($id);
-        $profesor->delete();
-        return redirect()->route('actividad.index');
+        $profesor = Profesor::find($id);
+		$profesor->delete();
+        return redirect()->route('profesor.index');
 	}
 
 }

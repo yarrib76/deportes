@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateActividadesTable extends Migration {
+class CreateProfesoresTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,14 +12,15 @@ class CreateActividadesTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('actividades', function(Blueprint $table)
+		Schema::create('profesores', function(Blueprint $table)
 		{
 			$table->increments('id');
 			$table->timestamps();
             $table->string('nombre');
-            $table->string('descripcion')->nullable();
-            $table->string('club');
-            $table->unique(['nombre','club']);
+            $table->string('apellido')->nullable();
+
+            $table->integer('actividad_id')->unsigned();
+            $table->foreign('actividad_id')->references('id')->on('actividades')->onDelete('cascade');
 		});
 	}
 
@@ -30,7 +31,7 @@ class CreateActividadesTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('actividades');
+		Schema::drop('profesores');
 	}
 
 }

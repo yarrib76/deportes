@@ -17,7 +17,7 @@ class GuardarActividadesRequest extends Request {
     public function rules()
     {
         return [
-            'nombre' => 'required|unique:actividades',
+            'nombre' => 'required|unique:actividades,tenis,NULL,club,nombre',
         ];
     }
 

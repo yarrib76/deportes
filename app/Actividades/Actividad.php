@@ -6,5 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 class Actividad extends Model{
 
     protected $table = 'actividades';
-    protected $fillable = ['nombre','descripcion'];
+    protected $fillable = ['nombre','descripcion','club'];
 }
