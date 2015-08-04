@@ -16,6 +16,16 @@
 
 <div class="form-group">
 
+    {!! Form::label('precio', 'Precio:', ['class' => 'col-sm-3 control-label']) !!}
+
+    <div class="col-sm-6">
+
+        {!! Form::input('number', 'precio', null, ['id' => 'precio', 'class' => 'form-control', 'name' => 'precio','placeholder' => 'Precio Mensual'])  !!}
+    </div>
+</div>
+
+<div class="form-group">
+
     {!! Form::label('detalle', 'Detalle :', ['class' => 'col-sm-3 control-label']) !!}
     <div class="col-sm-6">
         {!! Form::input('detalle', 'detalle', null, ['id' => 'descripcion', 'class' => 'form-control', 'name' => 'descripcion'])  !!}

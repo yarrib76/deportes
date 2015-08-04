@@ -45,6 +45,7 @@ class ActividadesController extends Controller {
         Actividad::create([
             'nombre' => Input::get('nombre'),
             'club' => Input::get('club'),
+            'precio' => Input::get('precio'),
             'descripcion' => Input::get('descripcion')
         ]);
         return redirect()->route('actividad.index');

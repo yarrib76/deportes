@@ -10,6 +10,7 @@
                                 <tr>
                                     <th>Nombre</th>
                                     <th>Club</th>
+                                    <th>Precio Mendual</th>
                                     <th>Descripcion</th>
                                     <th>Accion</th>
                                 </tr>
@@ -17,6 +18,7 @@
                                     <tr>
                                         <td>{{$actividad->nombre}}</td>
                                         <td>{{$actividad->club}}</td>
+                                        <td>{{$actividad->precio}}</td>
                                         <td>{{$actividad->descripcion}}</td>
                                         <td>
                                             {!! HTML::linkRoute('actividad.edit', ' Editar', $actividad->id , ['class' => 'btn btn-primary'] ) !!}

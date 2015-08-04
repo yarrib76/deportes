@@ -1,6 +1,7 @@
 <?php namespace Deportes\Http\Requests;
 
 use Deportes\Http\Requests\Request;
+use Illuminate\Support\Facades\Input;
 
 class GuardarActividadesRequest extends Request {
 
@@ -17,7 +18,7 @@ class GuardarActividadesRequest extends Request {
     public function rules()
     {
         return [
-            'nombre' => 'required|unique:actividades,tenis,NULL,club,nombre',
+            'nombre' => 'required|unique:actividades,nombre,NULL,actividades,club,'. Input::get('club') . '',
         ];
     }
 
