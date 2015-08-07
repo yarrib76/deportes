@@ -22,5 +22,22 @@
 @stop
 
 @section('extra-javascript')
+    <link rel="stylesheet" type="text/css" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"/>
+    <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"/>
+    <script src="http://multidatespickr.sourceforge.net/jquery-ui.multidatespicker.js"/>
+    <script type="text/javascript" src="/MultiDatesPicker/js/jquery-1.11.1.js"></script>
+    <script type="text/javascript" src="/MultiDatesPicker/js/jquery-ui-1.11.1.js"></script>
+    <script type="text/javascript" src="/MultiDatesPicker/js/jquery-2.1.1.js"></script>
+    <script type="text/javascript" src="/MultiDatesPicker/js/jquery-ui-1.11.1.js"></script>
+    <script type="text/javascript" src="/MultiDatesPicker/jquery-ui.multidatespicker.js"></script>
+    <script type="text/javascript" src="/MultiDatesPicker/js/prettify.js"></script>
+    <script type="text/javascript" src="/MultiDatesPicker/js/lang-css.js"></script>
+
+
     <script src="/js/cargoModelosEnSelect.js"></script>
+    <script src="/js/dateMultiplePicker.js"></script>
+
+
+
 @stop

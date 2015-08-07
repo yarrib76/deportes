@@ -38,6 +38,13 @@
 </div>
 
 <div class="form-group">
+    {!! Form::label('date', 'Fecha:', ['class' => 'col-sm-3 control-label']) !!}
+    <div class="col-sm-6">
+        <input id="datePick" type="text"/>
+    </div>
+</div>
+
+<div class="form-group">
 
     {!! Form::label('precio', 'Precio:', ['class' => 'col-sm-3 control-label']) !!}
 

@@ -53,7 +53,6 @@
 
     <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.6/js/jquery.dataTables.js"></script>
     <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/plug-ins/1.10.6/integration/bootstrap/3/dataTables.bootstrap.js"></script>
-
     <!-- DataTables -->
 
     <script type="text/javascript">
@@ -66,14 +65,14 @@
                             search: "Buscar:",
                             "thousands": ",",
                             processing:     "Traitement en cours...",
-                            lengthMenu:    "Mostrar _MENU_ moviles",
+                            lengthMenu:    "Mostrar _MENU_ actividades",
                             info:           "Mostrando del  _START_ al _END_ de _TOTAL_ moviles",
                             infoEmpty:      "0 moviles",
-                            infoFiltered:   "(Filtrando _MAX_ vehiculos en total)",
+                            infoFiltered:   "(Filtrando _MAX_ actividades en total)",
                             infoPostFix:    "",
                             loadingRecords: "Chargement en cours...",
-                            zeroRecords:    "No se encontraron moviles para esa busqueda",
-                            emptyTable:     "No existen moviles para esta flota",
+                            zeroRecords:    "No se encontraron actividades asignadas para esa busqueda",
+                            emptyTable:     "No existen actividades asignadas",
                             paginate: {
                                 first:      "Primero",
                                 previous:   "Anterior",
