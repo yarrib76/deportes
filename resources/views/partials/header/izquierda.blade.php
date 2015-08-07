@@ -18,7 +18,7 @@
 
         <ul class="nav navbar-nav">
             <li class="dropdown">
-                <a href="#" class="dropdown-toggle fa fa-btn fa-bar-chart-o" data-toggle="dropdown">
+                <a href="#" class="dropdown-toggle fa fa-btn" data-toggle="dropdown">
                     ABM <b class="caret"></b>
                 </a>
                 <ul class="dropdown-menu">
@@ -27,7 +27,7 @@
                 </ul>
             </li>
             <li class="dropdown">
-                <a href="#" class="dropdown-toggle fa fa-btn fa-bar-chart-o" data-toggle="dropdown">
+                <a href="#" class="dropdown-toggle fa fa-btn" data-toggle="dropdown">
                     Deportistas <b class="caret"></b>
                 </a>
                 <ul class="dropdown-menu">

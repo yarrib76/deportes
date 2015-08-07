@@ -22,7 +22,11 @@
                                     <tr>
                                         <td>{{$actividad->usuario->name}}</td>
                                         <td>{{$actividad->actividad->nombre}}</td>
-                                        <td>{{$actividad->profesor->nombre}}</td>
+                                        @if (isset($actividad->profesor->nombre))
+                                            <td>{{$actividad->profesor->nombre}}</td>
+                                        @else
+                                            <td>Fue Eliminado</td>
+                                        @endif
                                         <td>{{$actividad->fecha}}</td>
                                         <td>{{$actividad->costo}}</td>
 

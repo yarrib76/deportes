@@ -112,9 +112,11 @@ class ActividadesAsignadasController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function destroy($id)
+	public function destroy($actividades_asignadas)
 	{
-		//
-	}
+        $actividades_asignadas->delete();
+        return redirect()->route('actividades_asignadas.index');
+
+    }
 
 }

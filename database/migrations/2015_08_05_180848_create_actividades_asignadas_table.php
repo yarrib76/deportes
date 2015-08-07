@@ -16,6 +16,7 @@ class CreateActividadesAsignadasTable extends Migration {
 		{
 			$table->increments('id');
 			$table->timestamps();
+            $table->softDeletes();
 
             $table->string('fecha');
             $table->double('costo');
