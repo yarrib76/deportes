@@ -4,6 +4,7 @@ use Deportes\Agenda\Agenda;
 use Deportes\Http\Requests;
 use Deportes\Http\Controllers\Controller;
 
+use Deportes\User;
 use Illuminate\Http\Request;
 
 class AgendaController extends Controller {

@@ -29,6 +29,14 @@ Route::resource('actividad','Actividades\ActividadesController');
 Route::resource('profesor', 'Profesores\ProfesoresController');
 
 //Vista y ABM Agenda
-
 Route::resource('agenda', 'Agenda\AgendaController');
 
+//Vista y ABM ActividadesAsignadas
+Route::resource('actividades_asignadas', 'Deportistas\ActividadesAsignadas\ActividadesAsignadasController');
+
+
+Route::group(['prefix' => 'api'],
+    function () {
+
+        Route::get('/profesores', 'Api\ControladorProfesores@listaProfesores');
+    });
