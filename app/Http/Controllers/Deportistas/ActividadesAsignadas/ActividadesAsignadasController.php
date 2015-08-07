@@ -53,7 +53,7 @@ class ActividadesAsignadasController extends Controller {
             'actividad_id' => Input::get('actividad_id'),
             'profesor_id' => Input::get('profesor_id'),
             'fecha' => 'LM',
-            'costo' => Input::get('precio')
+            'costo' => Input::get('costo')
         ]);
         return redirect()->route('actividades_asignadas.index');
 	}
@@ -75,21 +75,22 @@ class ActividadesAsignadasController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function edit($id)
+	public function edit($actividades_asignadas)
 	{
         //Asigno la lista de todos los deportitas
         $deportistas = User::get()->lists('name','id');
         //Asigno el id del deportista que tiene asignada la actividad
-        $deportista_id = Actividades_Asignadas::find($id)->usuario_id;
+        $deportista_id = $actividades_asignadas->usuario_id;
         //Asigno la lista de todas las actividades
         $actividades = Actividad::get()->sortBy('id')->lists('nombre','id');
         //Asigno el ID de la Actividad Asignada
-        $actividad_id = Actividades_Asignadas::find($id)->actividad_id;
+        $actividad_id = $actividades_asignadas->actividad_id;
         //Asigno los profesores que realizan una determinada Actividad
         $profesores = Profesor::where('actividad_id', $actividad_id)->get()->lists('nombre','id');
         //Asigno el Id del profesor de la actividad asignada
-        $profesor_id = Actividades_Asignadas::find($id)->profesor_id;
-        return view ('deportistas.actividadesasignadas.edit', compact('profesores','deportistas','actividades','deportista_id','actividad_id','profesor_id'));
+        $profesor_id = $actividades_asignadas->profesor_id;
+        $costo = $actividades_asignadas->costo;
+        return view ('deportistas.actividadesasignadas.edit', compact('profesores','deportistas','actividades','deportista_id','actividad_id','profesor_id','actividades_asignadas','costo'));
 
     }
 
@@ -99,10 +100,11 @@ class ActividadesAsignadasController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function update($id)
+	public function update($actividades_asignadas)
 	{
-		dd($id);
-	}
+        $actividades_asignadas->fill(\Request::input())->save();
+        return redirect()->route('actividades_asignadas.index');
+    }
 
 	/**
 	 * Remove the specified resource from storage.

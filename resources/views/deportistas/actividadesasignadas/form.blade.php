@@ -43,7 +43,11 @@
 
     <div class="col-sm-6">
 
-        {!! Form::input('number', 'precio', null, ['id' => 'precio', 'class' => 'form-control', 'name' => 'precio','placeholder' => 'Precio Mensual'])  !!}
+        @if (isset($costo))
+            {!! Form::input('number', 'precio', $costo, ['id' => 'precio', 'class' => 'form-control', 'name' => 'costo','placeholder' => 'Precio Mensual'])  !!}
+        @else
+            {!! Form::input('number', 'precio', null, ['id' => 'precio', 'class' => 'form-control', 'name' => 'costo','placeholder' => 'Precio Mensual'])  !!}
+        @endif
     </div>
 </div>
 

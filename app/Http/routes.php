@@ -13,6 +13,9 @@
 use Illuminate\Support\Facades\Route;
 
 
+Route::model('actividades_asignadas', 'Deportes\ActividadesAsignadas\Actividades_Asignadas');
+
+
 Route::get('/', 'Actividades\ActividadesController@index');
 
 Route::get('home', 'Actividades\ActividadesController@index');

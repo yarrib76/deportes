@@ -26,5 +26,13 @@
                     <li><a href="/profesor"> Profesores </a></li>
                 </ul>
             </li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle fa fa-btn fa-bar-chart-o" data-toggle="dropdown">
+                    Deportistas <b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a href="/actividades_asignadas">Actividades Asignadas </a></li>
+                </ul>
+            </li>
         </ul>
     @endif
