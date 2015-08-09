@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::model('actividades_asignadas', 'Deportes\ActividadesAsignadas\Actividades_Asignadas');
+Route::model('agenda', 'Deportes\Agenda\Agenda');
 
 
 Route::get('/', 'Actividades\ActividadesController@index');
@@ -42,4 +43,5 @@ Route::group(['prefix' => 'api'],
     function () {
 
         Route::get('/profesores', 'Api\ControladorProfesores@listaProfesores');
+        Route::get('/agenda', 'Api\ControladorAgenda@listaCalendario');
     });

@@ -6,6 +6,7 @@ use Deportes\Http\Controllers\Controller;
 
 use Deportes\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Input;
 
 class AgendaController extends Controller {
 
@@ -16,8 +17,7 @@ class AgendaController extends Controller {
 	 */
 	public function index()
 	{
-		$agendas = Agenda::get()->load('profesor','actividad','usuario');
-        return view('agenda.reporte', compact('agendas'));
+        return view('agenda.calendario1');
 	}
 
 	/**
@@ -37,7 +37,12 @@ class AgendaController extends Controller {
 	 */
 	public function store()
 	{
-		//
+        Agenda::create([
+            'title' => Input::get('title'),
+            'start' => Input::get('start'),
+            'end' => Input::get('end'),
+            'url' => Input::get('url')
+        ]);
 	}
 
 	/**
@@ -68,9 +73,9 @@ class AgendaController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function update($id)
+	public function update($agenda)
 	{
-		//
+		$agenda->fill(\Request::input())->save();
 	}
 
 	/**

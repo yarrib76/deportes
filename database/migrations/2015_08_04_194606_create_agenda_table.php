@@ -16,17 +16,12 @@ class CreateAgendaTable extends Migration {
 		{
 			$table->increments('id');
 			$table->timestamps();
-            $table->string('fecha');
-
-            $table->integer('usuario_id')->unsigned();
-            $table->foreign('usuario_id')->references('id')->on('users')->onDelete('cascade');
-
-            $table->integer('profesor_id')->unsigned();
-            $table->foreign('profesor_id')->references('id')->on('profesores')->onDelete('cascade');
-
-            $table->integer('actividad_id')->unsigned();
-            $table->foreign('actividad_id')->references('id')->on('actividades')->onDelete('cascade');
-        });
+            $table->string('title')->nullable();
+            $table->dateTime('start')->nullable();
+            $table->dateTime('end');
+            $table->string('url')->nullable();
+            $table->string('allDay')->nullable();
+            });
 	}
 
 	/**
