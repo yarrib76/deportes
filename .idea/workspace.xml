@@ -2,21 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="aa94d037-d7c1-4f61-aca3-0b543698aefa" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/fullcalendar/demos/agenda-views.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/fullcalendar/demos/background-events.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/fullcalendar/demos/basic-views.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/fullcalendar/demos/default.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/fullcalendar/demos/external-dragging.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/fullcalendar/demos/gcal.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/fullcalendar/demos/json.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/fullcalendar/demos/json/events.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/fullcalendar/demos/languages.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/fullcalendar/demos/php/get-events.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/fullcalendar/demos/php/get-timezones.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/fullcalendar/demos/php/utils.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/fullcalendar/demos/selectable.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/fullcalendar/demos/theme.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/fullcalendar/demos/timezones.html" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Agenda/AgendaController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Agenda/AgendaController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/agenda/calendario1.blade.php" afterPath="$PROJECT_DIR$/resources/views/agenda/calendario1.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="deportes.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -44,11 +32,31 @@
       <file leaf-file-name="calendario1.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/agenda/calendario1.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.976" vertical-offset="2890" max-vertical-offset="3515">
-              <caret line="120" column="10" selection-start-line="120" selection-start-column="10" selection-end-line="120" selection-end-column="10" />
+            <state vertical-scroll-proportion="0.8816" vertical-offset="703" max-vertical-offset="3762">
+              <caret line="66" column="29" selection-start-line="66" selection-start-column="29" selection-end-line="66" selection-end-column="29" />
               <folding>
                 <element signature="n#style#0;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="fullcalendar.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/fullcalendar/fullcalendar.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="9538" max-vertical-offset="20425">
+              <caret line="515" column="30" selection-start-line="515" selection-start-column="4" selection-end-line="515" selection-end-column="30" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="calendario.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/agenda/calendario.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-8.109091" vertical-offset="1549" max-vertical-offset="4123">
+              <caret line="105" column="26" selection-start-line="97" selection-start-column="24" selection-end-line="105" selection-end-column="26" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -68,11 +76,21 @@
       <file leaf-file-name="AgendaController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Agenda/AgendaController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-9.5" vertical-offset="95" max-vertical-offset="1938">
-              <caret line="19" column="5" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
+            <state vertical-scroll-proportion="-15.535714" vertical-offset="1313" max-vertical-offset="1938">
+              <caret line="92" column="19" selection-start-line="92" selection-start-column="19" selection-end-line="92" selection-end-column="19" />
               <folding>
                 <element signature="e#51#107#0#PHP" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ProfesoresController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Profesores/ProfesoresController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="21.107143" vertical-offset="1275" max-vertical-offset="1900">
+              <caret line="42" column="7" selection-start-line="42" selection-start-column="7" selection-end-line="42" selection-end-column="7" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -105,7 +123,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/.env" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Actividades/Actividad.php" />
         <option value="$PROJECT_DIR$/resources/views/actividades/reporte.php" />
         <option value="$PROJECT_DIR$/resources/views/partials/header/derecha.blade.php" />
@@ -153,8 +170,9 @@
         <option value="$PROJECT_DIR$/resources/views/deportistas/actividadesasignadas/reporte.blade.php" />
         <option value="$PROJECT_DIR$/database/migrations/2015_08_04_194606_create_agenda_table.php" />
         <option value="$PROJECT_DIR$/app/Agenda/Agenda.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Agenda/AgendaController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Api/ControladorAgenda.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Agenda/AgendaController.php" />
+        <option value="$PROJECT_DIR$/public/fullcalendar/fullcalendar.css" />
         <option value="$PROJECT_DIR$/resources/views/agenda/calendario1.blade.php" />
       </list>
     </option>
@@ -656,7 +674,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="773" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32876712" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -669,7 +687,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32876712" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24959612" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2673667" sideWeight="0.49863014" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2673667" sideWeight="0.49863014" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -813,14 +831,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Profesores/ProfesoresController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.7936" vertical-offset="1180" max-vertical-offset="1900">
-          <caret line="42" column="7" selection-start-line="42" selection-start-column="7" selection-end-line="42" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/fullcalendar/lib/moment.min.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="653">
@@ -919,16 +929,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Agenda/AgendaController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.5" vertical-offset="95" max-vertical-offset="1938">
-          <caret line="19" column="5" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
-          <folding>
-            <element signature="e#51#107#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/deportistas/actividadesasignadas/reporte.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-11.535714" vertical-offset="342" max-vertical-offset="1786">
@@ -937,20 +937,44 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Profesores/ProfesoresController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="21.107143" vertical-offset="1275" max-vertical-offset="1900">
+          <caret line="42" column="7" selection-start-line="42" selection-start-column="7" selection-end-line="42" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Agenda/AgendaController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-15.535714" vertical-offset="1313" max-vertical-offset="1938">
+          <caret line="92" column="19" selection-start-line="92" selection-start-column="19" selection-end-line="92" selection-end-column="19" />
+          <folding>
+            <element signature="e#51#107#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/agenda/calendario.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.0064" vertical-offset="855" max-vertical-offset="4123">
-          <caret line="111" column="31" selection-start-line="111" selection-start-column="31" selection-end-line="111" selection-end-column="31" />
-          <folding>
-            <element signature="n#style#0;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="-8.109091" vertical-offset="1549" max-vertical-offset="4123">
+          <caret line="105" column="26" selection-start-line="97" selection-start-column="24" selection-end-line="105" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/fullcalendar/fullcalendar.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="9538" max-vertical-offset="20425">
+          <caret line="515" column="30" selection-start-line="515" selection-start-column="4" selection-end-line="515" selection-end-column="30" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/agenda/calendario1.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.976" vertical-offset="2890" max-vertical-offset="3515">
-          <caret line="120" column="10" selection-start-line="120" selection-start-column="10" selection-end-line="120" selection-end-column="10" />
+        <state vertical-scroll-proportion="0.8816" vertical-offset="703" max-vertical-offset="3762">
+          <caret line="66" column="29" selection-start-line="66" selection-start-column="29" selection-end-line="66" selection-end-column="29" />
           <folding>
             <element signature="n#style#0;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
           </folding>

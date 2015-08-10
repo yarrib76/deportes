@@ -6,6 +6,7 @@
             <div id='external-events'>
                 <h4>Actividad para: {{$deportista->usuario->name}}</h4>
                 <div class='fc-event'>{{$actividadAsignada->actividad->nombre}}</div>
+                <div class='fc-event'>Recuperar</div>
 
                 <p>
                     <input type='checkbox' id='drop-remove' />
@@ -80,7 +81,19 @@ $('#calendar').fullCalendar({
     },
     editable: true,
     droppable: true, // this allows things to be dropped onto the calendar !!!
-
+    eventClick: function(event) {
+        var decision = confirm("Do you really want to do that?");
+        if (decision) {
+            $.ajax({
+                type: "DELETE",
+                url: 'http://deportes.com:8000/agenda/' + event.id,
+                data: "&id=" + event.id
+            });
+            $('#calendar2').fullCalendar('removeEvents', event.id);
+            window.location.reload('calendar'); //avoid update failure after drop
+        } else {
+        }
+    },
     drop: function (date, allDay) { // this function is called when something is dropped
 // retrieve the dropped element's stored Event Object
         var originalEventObject = $(this).data('eventObject');
@@ -106,7 +119,6 @@ $('#calendar').fullCalendar({
                 var start = moment(copiedEventObject.start).format('YYYY-MM-DD');
                 var end = moment(end).format('YYYY-MM-DDTHH:mm:ssZ');
                 var url = copiedEventObject.url;
-                console.log(title,start,url,actividad_id);
 
                 $.ajax({
                     url: 'http://deportes.com:8000/agenda',
@@ -159,6 +171,7 @@ $('#calendar').fullCalendar({
     #external-events .fc-event {
         margin: 10px 0;
         cursor: pointer;
+        background-color: #3a87ad;
     }
 
     #external-events p {
