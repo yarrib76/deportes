@@ -121,7 +121,7 @@
                             $.ajax({
                                 url: 'http://localhost/fullcalendar/add_events.php',
                                 data: 'title='+ title+'&start='+ start +'&end='+ end +'&url='+ url ,
-                                type: "POST",
+                                type: "POST"
                             });
                         }
                         calendar.fullCalendar('unselect');

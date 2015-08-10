@@ -22,8 +22,8 @@ class CreateAgendaTable extends Migration {
             $table->string('url')->nullable();
             $table->string('allDay')->nullable();
 
-            $table->integer('actividad_id')->unsigned();
-            $table->foreign('actividad_id')->references('id')->on('actividades_asignadas')->onDelete('cascade');
+            $table->integer('actividadAsignada_id')->unsigned();
+            $table->foreign('actividadAsignada_id')->references('id')->on('actividades_asignadas')->onDelete('cascade');
 
         });
 	}

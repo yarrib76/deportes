@@ -32,12 +32,14 @@
     <script>
 $(document).ready(function() {
 
-    var actividad_id = {{{$actividadAsignada->id}}};
-
+    var actividadAsignada_id = {{{$actividadAsignada->id}}}
     var deportista_id = {{{$deportista->usuario->id}}}
+    var nombreActividad = '{{{$actividadAsignada->actividad->nombre}}}'
 
-    /* initialize the external events
-    -----------------------------------------------------------------*/
+
+
+        /* initialize the external events
+        -----------------------------------------------------------------*/
 
     $('#external-events .fc-event').each(function () {
 
@@ -70,8 +72,7 @@ $('#calendar').fullCalendar({
         center: 'title',
         right: 'month,agendaWeek,agendaDay'
     },
-    events: 'http://deportes.com:8000/api/agenda?' + 'actividad_id=' + actividad_id +
-    '&usuario_id' + deportista_id,
+    events: 'http://deportes.com:8000/api/agenda?' + 'actividadAsignada_id=' + actividadAsignada_id,
     eventRender: function (event, element, view) {
         if (event.allDay === 'true') {
             event.allDay = true;
@@ -123,7 +124,7 @@ $('#calendar').fullCalendar({
                 $.ajax({
                     url: 'http://deportes.com:8000/agenda',
                     data: 'title=' + title + '&start=' + start + '&end=' + start
-                    + '&url=' + url + '&actividad_id=' + actividad_id,
+                    + '&url=' + url + '&actividadAsignada_id=' + actividadAsignada_id,
                     type: "POST",
                     success: function (json) {
                         alert('Added Successfully');

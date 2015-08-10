@@ -13,9 +13,31 @@ class ControladorAgenda extends Controller{
 
     public function listaCalendario(){
 
+        $agenda = Agenda::where('actividadAsignada_id', Input::get('actividadAsignada_id'))->get();
+        $agendaFinal = $this->cambioTitle($agenda);
+       return Response::json($agendaFinal);
+    }
 
-       return Response::json(DB::table('agenda')
-           ->where('actividad_id', Input::get('actividad_id'))
-           ->get());
+    /**
+     * En la consulta cambio el valor del campo title de la tabla Agenda,
+     * para que muestre como valor el nombre de la Actividad que esta en la
+     * tabla Actividades, a menos que tenga como valor "Recuperar"
+     * @param $agendas
+     * @return array
+     */
+    public function cambioTitle($agendas){
+        $x = 0;
+        $agendaFinal = [];
+        foreach ($agendas as $agenda) {
+            $agenda->load('actividadesAsignadas');
+            $nombreActividadesAsignadas = $agenda->actividadesAsignadas->load('actividad')->actividad->nombre;
+            if ($agenda->title !== "Recuperar") {
+                $agenda->title = $nombreActividadesAsignadas;
+                $agendaFinal[$x] = $agenda;
+            }
+            $agendaFinal[$x] = $agenda;
+            $x++;
+        }
+       return $agendaFinal;
     }
 }
