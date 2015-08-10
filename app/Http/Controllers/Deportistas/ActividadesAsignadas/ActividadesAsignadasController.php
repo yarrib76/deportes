@@ -8,6 +8,7 @@ use Deportes\Http\Controllers\Controller;
 use Deportes\Profesores\Profesor;
 use Deportes\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Input;
 
 class ActividadesAsignadasController extends Controller {
@@ -48,11 +49,12 @@ class ActividadesAsignadasController extends Controller {
 	 */
 	public function store()
 	{
+        $fecha = $this->concatenarFercha($_REQUEST);
         Actividades_Asignadas::create([
             'usuario_id' => Input::get('deportista_id'),
             'actividad_id' => Input::get('actividad_id'),
             'profesor_id' => Input::get('profesor_id'),
-            'fecha' => 'LM',
+            'fecha' =>  $fecha,
             'costo' => Input::get('costo')
         ]);
         return redirect()->route('actividades_asignadas.index');
@@ -102,7 +104,17 @@ class ActividadesAsignadasController extends Controller {
 	 */
 	public function update($actividades_asignadas)
 	{
-        $actividades_asignadas->fill(\Request::input())->save();
+        $fecha = $this->concatenarFercha($_REQUEST);
+        db::table('actividades_asignadas')
+            ->where('id',$actividades_asignadas->id)
+            ->update([
+        'usuario_id' => Input::get('deportista_id'),
+        'actividad_id' => Input::get('actividad_id'),
+        'profesor_id' => Input::get('profesor_id'),
+        'fecha' =>  $fecha,
+        'costo' => Input::get('costo')
+    ]);
+       // $actividades_asignadas->fill(\Request::input())->save();
         return redirect()->route('actividades_asignadas.index');
     }
 
@@ -119,4 +131,13 @@ class ActividadesAsignadasController extends Controller {
 
     }
 
+    public function concatenarFercha($datos){
+        $fecha = "";
+        foreach ($datos as $dato){
+            if ($dato === 'L'or $dato === 'M'or $dato === 'Mi' or $dato === 'J' or $dato === 'V' or $dato === 'S' or $dato === 'D') {
+                $fecha  = $fecha . $dato  ;
+            }
+        }
+        return $fecha;
+    }
 }

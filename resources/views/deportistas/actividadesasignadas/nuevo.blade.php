@@ -36,8 +36,5 @@
 
 
     <script src="/js/cargoModelosEnSelect.js"></script>
-    <script src="/js/dateMultiplePicker.js"></script>
-
-
 
 @stop
