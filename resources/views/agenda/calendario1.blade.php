@@ -33,9 +33,6 @@
 $(document).ready(function() {
 
     var actividadAsignada_id = {{{$actividadAsignada->id}}}
-    var deportista_id = {{{$deportista->usuario->id}}}
-    var nombreActividad = '{{{$actividadAsignada->actividad->nombre}}}'
-
 
 
         /* initialize the external events
@@ -82,19 +79,7 @@ $('#calendar').fullCalendar({
     },
     editable: true,
     droppable: true, // this allows things to be dropped onto the calendar !!!
-    eventClick: function(event) {
-        var decision = confirm("Do you really want to do that?");
-        if (decision) {
-            $.ajax({
-                type: "DELETE",
-                url: 'http://deportes.com:8000/agenda/' + event.id,
-                data: "&id=" + event.id
-            });
-            $('#calendar2').fullCalendar('removeEvents', event.id);
-            window.location.reload('calendar'); //avoid update failure after drop
-        } else {
-        }
-    },
+
     drop: function (date, allDay) { // this function is called when something is dropped
 // retrieve the dropped element's stored Event Object
         var originalEventObject = $(this).data('eventObject');
@@ -127,11 +112,26 @@ $('#calendar').fullCalendar({
                     + '&url=' + url + '&actividadAsignada_id=' + actividadAsignada_id,
                     type: "POST",
                     success: function (json) {
-                        alert('Added Successfully');
+                        alert('Se Agrego Correctamente');
                     }
                 });
             }
             window.location.reload('calendar'); //avoid update failure after drop
+        }
+    },
+
+    //Eliminar un Evento del Calendario
+    eventClick: function(event) {
+        var decision = confirm("Esta seguro de eliminar este Evento");
+        if (decision) {
+            $.ajax({
+                type: "DELETE",
+                url: 'http://deportes.com:8000/agenda/' + event.id,
+                data: "&id=" + event.id
+            });
+            $('#calendar2').fullCalendar('removeEvents', event.id);
+            window.location.reload('calendar'); //avoid update failure after drop
+        } else {
         }
     }
 });
