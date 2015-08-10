@@ -1,5 +1,6 @@
 <?php namespace Deportes\Http\Controllers\Agenda;
 
+use Deportes\ActividadesAsignadas\Actividades_Asignadas;
 use Deportes\Agenda\Agenda;
 use Deportes\Http\Requests;
 use Deportes\Http\Controllers\Controller;
@@ -17,7 +18,9 @@ class AgendaController extends Controller {
 	 */
 	public function index()
 	{
-        return view('agenda.calendario1');
+        $actividadAsignada = Actividades_Asignadas::find(Input::get('actividad_id'))->load('actividad');
+        $deportista = Actividades_Asignadas::find(Input::get('actividad_id'))->load('usuario');
+        return view('agenda.calendario1', compact('actividadAsignada','deportista'));
 	}
 
 	/**
@@ -41,6 +44,7 @@ class AgendaController extends Controller {
             'title' => Input::get('title'),
             'start' => Input::get('start'),
             'end' => Input::get('end'),
+            'actividad_id' => Input::get('actividad_id'),
             'url' => Input::get('url')
         ]);
 	}

@@ -4,12 +4,9 @@
         <div id='wrap'>
 
             <div id='external-events'>
-                <h4>Draggable Events</h4>
-                <div class='fc-event'>My Event 1</div>
-                <div class='fc-event'>My Event 2</div>
-                <div class='fc-event'>My Event 3</div>
-                <div class='fc-event'>My Event 4</div>
-                <div class='fc-event'>My Event 5</div>
+                <h4>Actividad para: {{$deportista->usuario->name}}</h4>
+                <div class='fc-event'>{{$actividadAsignada->actividad->nombre}}</div>
+
                 <p>
                     <input type='checkbox' id='drop-remove' />
                     <label for='drop-remove'>remove after drop</label>
@@ -34,9 +31,12 @@
     <script>
 $(document).ready(function() {
 
+    var actividad_id = {{{$actividadAsignada->id}}};
 
-/* initialize the external events
------------------------------------------------------------------*/
+    var deportista_id = {{{$deportista->usuario->id}}}
+
+    /* initialize the external events
+    -----------------------------------------------------------------*/
 
     $('#external-events .fc-event').each(function () {
 
@@ -69,7 +69,8 @@ $('#calendar').fullCalendar({
         center: 'title',
         right: 'month,agendaWeek,agendaDay'
     },
-    events: 'http://deportes.com:8000/api/agenda',
+    events: 'http://deportes.com:8000/api/agenda?' + 'actividad_id=' + actividad_id +
+    '&usuario_id' + deportista_id,
     eventRender: function (event, element, view) {
         if (event.allDay === 'true') {
             event.allDay = true;
@@ -84,7 +85,7 @@ $('#calendar').fullCalendar({
 // retrieve the dropped element's stored Event Object
         var originalEventObject = $(this).data('eventObject');
 
-// we need to copy it, so that multiple events don't have a reference to the same object
+        // we need to copy it, so that multiple events don't have a reference to the same object
         var copiedEventObject = $.extend({}, originalEventObject);
 
 // assign it the date that was reported
@@ -105,9 +106,12 @@ $('#calendar').fullCalendar({
                 var start = moment(copiedEventObject.start).format('YYYY-MM-DD');
                 var end = moment(end).format('YYYY-MM-DDTHH:mm:ssZ');
                 var url = copiedEventObject.url;
+                console.log(title,start,url,actividad_id);
+
                 $.ajax({
                     url: 'http://deportes.com:8000/agenda',
-                    data: 'title=' + title + '&start=' + start + '&end=' + start + '&url=' + url,
+                    data: 'title=' + title + '&start=' + start + '&end=' + start
+                    + '&url=' + url + '&actividad_id=' + actividad_id,
                     type: "POST",
                     success: function (json) {
                         alert('Added Successfully');

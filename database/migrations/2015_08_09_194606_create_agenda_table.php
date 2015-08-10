@@ -21,7 +21,11 @@ class CreateAgendaTable extends Migration {
             $table->dateTime('end');
             $table->string('url')->nullable();
             $table->string('allDay')->nullable();
-            });
+
+            $table->integer('actividad_id')->unsigned();
+            $table->foreign('actividad_id')->references('id')->on('actividades_asignadas')->onDelete('cascade');
+
+        });
 	}
 
 	/**
