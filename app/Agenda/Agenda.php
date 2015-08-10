@@ -5,7 +5,7 @@ use Illuminate\Database\Eloquent\Model;
 class Agenda extends Model {
 
     protected $table = 'agenda';
-    protected $fillable = ['title','start','end','url','actividadAsignada_id'];
+    protected $fillable = ['title','start','end','url','actividadAsignada_id','color'];
 
     public function actividadesAsignadas(){
         return $this->belongsTo('Deportes\ActividadesAsignadas\Actividades_Asignadas', 'actividadAsignada_id');

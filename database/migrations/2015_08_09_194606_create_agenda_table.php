@@ -20,6 +20,7 @@ class CreateAgendaTable extends Migration {
             $table->dateTime('start')->nullable();
             $table->dateTime('end');
             $table->string('url')->nullable();
+            $table->string('color')->nullable();
             $table->string('allDay')->nullable();
 
             $table->integer('actividadAsignada_id')->unsigned();

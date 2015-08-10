@@ -7,6 +7,7 @@
                 <h4>Actividad para: {{$deportista->usuario->name}}</h4>
                 <div class='fc-event'>{{$actividadAsignada->actividad->nombre}}</div>
                 <div class='fc-event'>Recuperar</div>
+                <div class='fc-event'>Recuperado</div>
 
                 <p>
                     <input type='checkbox' id='drop-remove' />
@@ -28,6 +29,7 @@
     <script src='/fullcalendar/lib/jquery.min.js'></script>
     <script src='/fullcalendar/lib/jquery-ui.custom.min.js'></script>
     <script src='/fullcalendar/fullcalendar.min.js'></script>
+    <script src='/fullcalendar/lang/es.js'></script>
 
     <script>
 $(document).ready(function() {
@@ -105,11 +107,17 @@ $('#calendar').fullCalendar({
                 var start = moment(copiedEventObject.start).format('YYYY-MM-DD');
                 var end = moment(end).format('YYYY-MM-DDTHH:mm:ssZ');
                 var url = copiedEventObject.url;
-
+                if (title === "Recuperar") {
+                    var color = '#C20000';
+                }
+                 else
+                    if (title === "Recuperado"){
+                        var color = '#006600';
+                    }
                 $.ajax({
                     url: 'http://deportes.com:8000/agenda',
                     data: 'title=' + title + '&start=' + start + '&end=' + start
-                    + '&url=' + url + '&actividadAsignada_id=' + actividadAsignada_id,
+                    + '&url=' + url + '&color=' + color + '&actividadAsignada_id=' + actividadAsignada_id,
                     type: "POST",
                     success: function (json) {
                         alert('Se Agrego Correctamente');

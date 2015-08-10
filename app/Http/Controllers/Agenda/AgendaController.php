@@ -44,6 +44,7 @@ class AgendaController extends Controller {
             'title' => Input::get('title'),
             'start' => Input::get('start'),
             'end' => Input::get('end'),
+            'color' => Input::get('color'),
             'actividadAsignada_id' => Input::get('actividadAsignada_id'),
             'url' => Input::get('url')
         ]);

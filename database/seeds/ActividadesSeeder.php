@@ -19,8 +19,8 @@ class ActividadesSeeder extends Seeder{
       //  $this->crearActividad('Tenis Individual','Club Italiano');
       //  $this->crearActividad('Tenis Grupal X2','Club Italiano');
       //  $this->crearActividad('Boxeo','Relampago Team');
-        Factory::create('actividades');
-        Factory::create('actividades');
+      //  Factory::create('actividades');
+      //  Factory::create('actividades');
     }
 
     private function crearActividad($nombre,  $club)

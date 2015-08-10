@@ -9,13 +9,13 @@ $factory('Deportes\User','usuario', [
 
 $factory('Deportes\Actividades\Actividad','actividades', [
 
-    'nombre' => $faker->word(),
-    'club' => $faker->word(),
+    'nombre' => $faker->word,
+    'club' => $faker->word,
 ]);
 
 $factory('Deportes\Profesores\Profesor','profesores', [
 
-    'nombre' => $faker->word(),
-    'apellido' => $faker->word(),
+    'nombre' => $faker->firstName(),
+    'apellido' => $faker->lastName(),
     'actividad_id' => 'factory:actividades'
 ]);

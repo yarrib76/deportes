@@ -31,7 +31,7 @@ class ControladorAgenda extends Controller{
         foreach ($agendas as $agenda) {
             $agenda->load('actividadesAsignadas');
             $nombreActividadesAsignadas = $agenda->actividadesAsignadas->load('actividad')->actividad->nombre;
-            if ($agenda->title !== "Recuperar") {
+            if ($agenda->title !== "Recuperar" and $agenda->title !== "Recuperado") {
                 $agenda->title = $nombreActividadesAsignadas;
                 $agendaFinal[$x] = $agenda;
             }
