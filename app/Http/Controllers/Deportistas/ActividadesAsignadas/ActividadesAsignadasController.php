@@ -122,7 +122,7 @@ class ActividadesAsignadasController extends Controller {
 	 * Remove the specified resource from storage.
 	 *
 	 * @param  int  $id
-	 * @return Response
+	 * @return Response 
 	 */
 	public function destroy($actividades_asignadas)
 	{

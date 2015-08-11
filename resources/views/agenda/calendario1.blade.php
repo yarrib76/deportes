@@ -71,7 +71,7 @@ $('#calendar').fullCalendar({
         center: 'title',
         right: 'month,agendaWeek,agendaDay'
     },
-    events: 'http://deportes.com:8000/api/agenda?' + 'actividadAsignada_id=' + actividadAsignada_id,
+    events: '/api/agenda?' + 'actividadAsignada_id=' + actividadAsignada_id,
     eventRender: function (event, element, view) {
         if (event.allDay === 'true') {
             event.allDay = true;
@@ -115,7 +115,7 @@ $('#calendar').fullCalendar({
                         var color = '#006600';
                     }
                 $.ajax({
-                    url: 'http://deportes.com:8000/agenda',
+                    url: '/agenda',
                     data: 'title=' + title + '&start=' + start + '&end=' + start
                     + '&url=' + url + '&color=' + color + '&actividadAsignada_id=' + actividadAsignada_id,
                     type: "POST",
@@ -134,7 +134,7 @@ $('#calendar').fullCalendar({
         if (decision) {
             $.ajax({
                 type: "DELETE",
-                url: 'http://deportes.com:8000/agenda/' + event.id,
+                url: '/agenda/' + event.id,
                 data: "&id=" + event.id
             });
             $('#calendar2').fullCalendar('removeEvents', event.id);
