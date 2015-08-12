@@ -1,6 +1,5 @@
 
 $(document).ready(function() {
-    console.log(actividadAsignada_id);
 /* initialize the external events
  -----------------------------------------------------------------*/
 
