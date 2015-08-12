@@ -4,10 +4,28 @@
         <div id='wrap'>
 
             <div id='external-events'>
-                <h4>Actividad para: {{$deportista->usuario->name}}</h4>
-                <div class='fc-event'>{{$actividadAsignada->actividad->nombre}}</div>
-                <div class='fc-event'>Recuperar</div>
-                <div class='fc-event'>Recuperado</div>
+                @if (isset($usuario))
+                     <h4>Actividades para: {{$usuario->name}}</h4>
+                    @foreach($actividadAsignada as $actividad)
+                        <div class='fc-event'>{{$actividad->actividad->nombre}}</div>
+                    @endforeach
+                    <script>
+                        var tipoConsulta = "usuario";
+                        var actividadAsignada_id = {{{$usuario->id}}}
+                    </script>
+                @else
+                    <h4>Actividad para: {{$deportista->usuario->name}}</h4>
+                    <div class='fc-event'>{{$actividadAsignada->actividad->nombre}}</div>
+
+                        <script>
+                            var tipoConsulta = "actividadAsignada";
+                            var actividadAsignada_id = {{{$actividadAsignada->id}}}
+                        </script>
+
+                @endif
+
+                    <div class='fc-event'>Recuperar</div>
+                    <div class='fc-event'>Recuperado</div>
 
                 <p>
                     <input type='checkbox' id='drop-remove' />
@@ -34,9 +52,4 @@
     <script src='/fullcalendar/lang/es.js'></script>
     <script src='/fullcalendar/calendario.js'></script>
 
-    <script>
-
-    var actividadAsignada_id = {{{$actividadAsignada->id}}}
-
-    </script>
 @stop
