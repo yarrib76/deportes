@@ -8,6 +8,7 @@ use Deportes\Http\Controllers\Controller;
 use Deportes\Profesores\Profesor;
 use Deportes\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Input;
 
@@ -28,6 +29,12 @@ class ActividadesAsignadasController extends Controller {
         return view('deportistas.actividadesasignadas.reporte', compact('actividades'));
 	}
 
+    public function indexMiUsuario()
+    {
+        $usuario = Auth::user();
+        $actividadesAsignadasAUnUsuario = $usuario->actividadesAsignadas()->get()->load('actividad','profesor');
+        return view('deportistas.actividadesasignadas.miusuario.reporte', compact('usuario','actividadesAsignadasAUnUsuario'));
+    }
 	/**
 	 * Show the form for creating a new resource.
 	 *

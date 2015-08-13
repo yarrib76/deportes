@@ -29,4 +29,5 @@
 @include('partials.footer')
 @yield('extra-javascript')
 
+
 </html>

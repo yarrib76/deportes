@@ -23,4 +23,10 @@ class Actividades_Asignadas extends Model {
         return $this->belongsTo('Deportes\User', 'usuario_id');
 
     }
+
+    public function agenda(){
+        return $this->hasMany('Deportes\Agenda\Agenda', 'actividadAsignada_id');
+
+    }
+
 }

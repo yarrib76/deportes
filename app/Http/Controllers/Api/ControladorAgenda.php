@@ -5,6 +5,7 @@ namespace Deportes\Http\Controllers\Api;
 use Deportes\ActividadesAsignadas\Actividades_Asignadas;
 use Deportes\Agenda\Agenda;
 use Deportes\Http\Controllers\Controller;
+use Deportes\User;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Response;
@@ -12,7 +13,12 @@ use Illuminate\Support\Facades\Response;
 class ControladorAgenda extends Controller{
 
     public function listaCalendario(){
-
+        if (Input::get('usuario_id')) {
+            $usuario = User::find(Input::get('usuario_id'));
+            $actividadAsignada = $usuario->actividadesAsignadas()->get()->load('agenda', 'actividad');
+            $agendaFinal = $this->preparoJson($actividadAsignada);
+            return Response::json($agendaFinal);
+        }
         $agenda = Agenda::where('actividadAsignada_id', Input::get('actividadAsignada_id'))->get();
         $agendaFinal = $this->cambioTitle($agenda);
        return Response::json($agendaFinal);
@@ -39,5 +45,31 @@ class ControladorAgenda extends Controller{
             $x++;
         }
        return $agendaFinal;
+    }
+
+    public function preparoJson($datos){
+        $x = 0;
+        $agenedaFinal = [];
+        foreach ($datos as $dato){
+            if ($dato->agenda) {
+                foreach ($dato->agenda as $agenda) {
+                    $agenedaFinal[$x] = ['id' => $agenda->id] + ['end' => $agenda->end]
+                        + ['end' => $agenda->end] + ['url' => $agenda->url]
+                        + ['color' => $agenda->color] + ['allDay' => $agenda->allDay]
+                        + ['start' => $agenda->start];
+                    if ($agenda->title == "Recuperar"){
+                        $agenedaFinal[$x] = $agenedaFinal[$x] + ['title' => 'Recuperar'];
+                    }
+                    if ($agenda->title == "Recuperado"){
+                        $agenedaFinal[$x] = $agenedaFinal[$x] + ['title' => 'Recuperado'];
+                    }
+                    if ($agenda->title !== "Recuperar" and $agenda->title !== "Recuperado") {
+                        $agenedaFinal[$x] = $agenedaFinal[$x] + ['title' => $dato->actividad->nombre];
+                    }
+                    $x++;
+                }
+            }
+        }
+        return $agenedaFinal;
     }
 }

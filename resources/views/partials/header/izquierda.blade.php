@@ -31,8 +31,12 @@
                     Deportistas <b class="caret"></b>
                 </a>
                 <ul class="dropdown-menu">
-                    <li><a href="/actividades_asignadas">Actividades Asignadas </a></li>
+                    <li class="dropdown-submenu">
+                        <li><a href="/actividades_asignadas">Actividades Asignadas (Todos Los Usuarios) </a></li>
+                        <li><a href="/actividades_asignadas_miUsuario">Actividades Asignadas (Mi Usuario) </a></li>
+                    </li>
                 </ul>
             </li>
         </ul>
+
     @endif
