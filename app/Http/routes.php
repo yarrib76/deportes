@@ -37,6 +37,7 @@ Route::resource('agenda', 'Agenda\AgendaController');
 
 //Vista y ABM ActividadesAsignadas
 Route::resource('actividades_asignadas', 'Deportistas\ActividadesAsignadas\ActividadesAsignadasController');
+Route::get('actividades_asignadas_miUsuario', 'Deportistas\ActividadesAsignadas\ActividadesAsignadasController@indexMiUsuario');
 
 
 Route::group(['prefix' => 'api'],

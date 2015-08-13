@@ -18,6 +18,11 @@ class AgendaController extends Controller {
 	 */
 	public function index()
 	{
+        if (Input::get('usuario')){
+            $usuario = User::find(Input::get('usuario'));
+            $actividadAsignada = $usuario->actividadesAsignadas()->get()->load('actividad','profesor');
+            return view('agenda.calendario1', compact('actividadAsignada','usuario'));
+        }
         $actividadAsignada = Actividades_Asignadas::find(Input::get('actividad_id'))->load('actividad');
         $deportista = Actividades_Asignadas::find(Input::get('actividad_id'))->load('usuario');
         return view('agenda.calendario1', compact('actividadAsignada','deportista'));
@@ -46,7 +51,7 @@ class AgendaController extends Controller {
             'end' => Input::get('end'),
             'color' => Input::get('color'),
             'actividadAsignada_id' => Input::get('actividadAsignada_id'),
-            'url' => Input::get('url')
+          //  'url' => Input::get('url')
         ]);
 	}
 

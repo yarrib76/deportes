@@ -2,16 +2,14 @@
 $(document).ready(function() {
 /* initialize the external events
  -----------------------------------------------------------------*/
-
 $('#external-events .fc-event').each(function () {
 
 // create an Event Object (http://arshaw.com/fullcalendar/docs/event_data/Event_Object/)
 // it doesn't need to have a start or end
     var eventObject = {
         title: $.trim($(this).text()), // use the element's text as the event title
-        url: $.trim($(this).attr('url'))
+        actividadAsignada_id: $.trim($(this).attr('actividadAsignada_id'))
     };
-
 // store the Event Object in the DOM element so we can get to it later
     $(this).data('eventObject', eventObject);
 
@@ -34,7 +32,8 @@ $('#calendar').fullCalendar({
         center: 'title',
         right: 'month,agendaWeek,agendaDay'
     },
-    events: '/api/agenda?' + 'actividadAsignada_id=' + actividadAsignada_id,
+
+    events: '/api/agenda?' + tipoConsulta + '_id=' + id,
     eventRender: function (event, element, view) {
         if (event.allDay === 'true') {
             event.allDay = true;
@@ -44,11 +43,9 @@ $('#calendar').fullCalendar({
     },
     editable: true,
     droppable: true, // this allows things to be dropped onto the calendar !!!
-
     drop: function (date, allDay) { // this function is called when something is dropped
 // retrieve the dropped element's stored Event Object
         var originalEventObject = $(this).data('eventObject');
-
         // we need to copy it, so that multiple events don't have a reference to the same object
         var copiedEventObject = $.extend({}, originalEventObject);
 
@@ -69,7 +66,10 @@ $('#calendar').fullCalendar({
             if (title) {
                 var start = moment(copiedEventObject.start).format('YYYY-MM-DD');
                 var end = moment(end).format('YYYY-MM-DDTHH:mm:ssZ');
-                var url = copiedEventObject.url;
+                var actividadAsignada_id = copiedEventObject.actividadAsignada_id;
+                console.log(actividadAsignada_id);
+                var pp = 'title=' + title + '&start=' + start + '&end=' + start
+                    + '&color=' + color + '&actividadAsignada_id=' + actividadAsignada_id
                 if (title === "Recuperar") {
                     var color = '#C20000';
                 }
@@ -80,7 +80,7 @@ $('#calendar').fullCalendar({
                 $.ajax({
                     url: '/agenda',
                     data: 'title=' + title + '&start=' + start + '&end=' + start
-                    + '&url=' + url + '&color=' + color + '&actividadAsignada_id=' + actividadAsignada_id,
+                    + '&color=' + color + '&actividadAsignada_id=' + actividadAsignada_id,
                     type: "POST",
                     success: function (json) {
                         alert('Se Agrego Correctamente');
