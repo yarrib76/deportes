@@ -7,25 +7,28 @@
                 @if (isset($usuario))
                      <h4>Actividades para: {{$usuario->name}}</h4>
                     @foreach($actividadAsignada as $actividad)
-                        <div class='fc-event'>{{$actividad->actividad->nombre}}</div>
+                        <div class='fc-event' actividadAsignada_id = {{$actividad->id}} >{{$actividad->actividad->nombre}}</div>
                     @endforeach
                     <script>
                         var tipoConsulta = "usuario";
-                        var actividadAsignada_id = {{{$usuario->id}}}
+                        var id = {{{$usuario->id}}}
                     </script>
+                    <div class='fc-event' actividadAsignada_id = {{$actividadAsignada[0]->id}}>Recuperar</div>
+                    <div class='fc-event' actividadAsignada_id = {{$actividadAsignada[0]->id}}>Recuperado</div>
+
                 @else
                     <h4>Actividad para: {{$deportista->usuario->name}}</h4>
-                    <div class='fc-event'>{{$actividadAsignada->actividad->nombre}}</div>
-
+                    <div class='fc-event' actividadAsignada_id = {{$actividadAsignada->id}}>{{$actividadAsignada->actividad->nombre}}</div>
+                    <div class='fc-event' actividadAsignada_id = {{$actividadAsignada->id}}>Recuperar</div>
+                    <div class='fc-event' actividadAsignada_id = {{$actividadAsignada->id}}>Recuperado</div>
                         <script>
                             var tipoConsulta = "actividadAsignada";
-                            var actividadAsignada_id = {{{$actividadAsignada->id}}}
+                            var id = {{{$actividadAsignada->id}}}
                         </script>
 
                 @endif
 
-                    <div class='fc-event'>Recuperar</div>
-                    <div class='fc-event'>Recuperado</div>
+
 
                 <p>
                     <input type='checkbox' id='drop-remove' />
