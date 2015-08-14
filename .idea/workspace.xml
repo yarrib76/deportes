@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< HEAD
+    <list default="true" id="aa94d037-d7c1-4f61-aca3-0b543698aefa" name="Default" comment="" />
+=======
     <list default="true" id="aa94d037-d7c1-4f61-aca3-0b543698aefa" name="Default" comment="">
 <<<<<<< HEAD
 =======
@@ -10,6 +13,7 @@
 >>>>>>> f56f41e57e119b7979c5fa658f93f41bac15556c
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
+>>>>>>> master
     <ignored path="deportes.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -43,20 +47,29 @@
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Deportistas/ActividadesAsignadas/ActividadesAsignadasController.php">
           <provider selected="true" editor-type-id="text-editor">
 <<<<<<< HEAD
+            <state vertical-scroll-proportion="0.0" vertical-offset="114" max-vertical-offset="2774">
+              <caret line="45" column="16" selection-start-line="45" selection-start-column="16" selection-end-line="45" selection-end-column="16" />
+=======
+<<<<<<< HEAD
             <state vertical-scroll-proportion="0.0" vertical-offset="570" max-vertical-offset="1368">
               <caret line="48" column="46" selection-start-line="48" selection-start-column="46" selection-end-line="48" selection-end-column="46" />
 =======
             <state vertical-scroll-proportion="0.0" vertical-offset="19" max-vertical-offset="2774">
               <caret line="26" column="5" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
 >>>>>>> f56f41e57e119b7979c5fa658f93f41bac15556c
+>>>>>>> master
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="calendario.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="calendario.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/fullcalendar/calendario.js">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2052">
+              <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+=======
 <<<<<<< HEAD
             <state vertical-scroll-proportion="-8.142858" vertical-offset="0" max-vertical-offset="2660">
               <caret line="21" column="6" selection-start-line="21" selection-start-column="6" selection-end-line="21" selection-end-column="6" />
@@ -64,11 +77,15 @@
             <state vertical-scroll-proportion="0.7125" vertical-offset="1235" max-vertical-offset="2204">
               <caret line="89" column="10" selection-start-line="89" selection-start-column="10" selection-end-line="89" selection-end-column="10" />
 >>>>>>> f56f41e57e119b7979c5fa658f93f41bac15556c
+>>>>>>> master
               <folding />
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
+      <file leaf-file-name="ControladorAgenda.php" pinned="false" current-in-tab="true">
+=======
 <<<<<<< HEAD
       <file leaf-file-name="calendario1.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/agenda/calendario1.blade.php">
@@ -78,10 +95,11 @@
               <folding />
 =======
       <file leaf-file-name="ControladorAgenda.php" pinned="false" current-in-tab="false">
+>>>>>>> master
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/ControladorAgenda.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="57" max-vertical-offset="1520">
-              <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.1488" vertical-offset="648" max-vertical-offset="1520">
+              <caret line="39" column="76" selection-start-line="39" selection-start-column="76" selection-end-line="39" selection-end-column="76" />
               <folding>
                 <element signature="e#49#105#0#PHP" expanded="true" />
               </folding>
@@ -90,6 +108,8 @@
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
+=======
 <<<<<<< HEAD
       <file leaf-file-name="calendario.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/fullcalendar/calendario.js">
@@ -108,6 +128,7 @@
           </provider>
         </entry>
       </file>
+>>>>>>> master
       <file leaf-file-name="Agenda.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Agenda/Agenda.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -121,7 +142,7 @@
       <file leaf-file-name="reporte.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/deportistas/actividadesasignadas/reporte.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-16.285715" vertical-offset="209" max-vertical-offset="1786">
+            <state vertical-scroll-proportion="-23.75" vertical-offset="0" max-vertical-offset="1786">
               <caret line="35" column="96" selection-start-line="35" selection-start-column="96" selection-end-line="35" selection-end-column="108" />
               <folding />
             </state>
@@ -141,11 +162,9 @@
       <file leaf-file-name="calendario1.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/agenda/calendario1.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.464286" vertical-offset="95" max-vertical-offset="1216">
-              <caret line="16" column="88" selection-start-line="16" selection-start-column="88" selection-end-line="16" selection-end-column="88" />
-              <folding>
-                <element signature="e#1793#1811#0#HTML" expanded="true" />
-              </folding>
+            <state vertical-scroll-proportion="-13.571428" vertical-offset="133" max-vertical-offset="1235">
+              <caret line="27" column="33" selection-start-line="27" selection-start-column="33" selection-end-line="27" selection-end-column="33" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -153,7 +172,7 @@
       <file leaf-file-name="AgendaController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Agenda/AgendaController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-12.892858" vertical-offset="513" max-vertical-offset="1919">
+            <state vertical-scroll-proportion="0.0" vertical-offset="95" max-vertical-offset="1919">
               <caret line="53" column="12" selection-start-line="53" selection-start-column="12" selection-end-line="53" selection-end-column="12" />
               <folding />
             </state>
@@ -163,7 +182,7 @@
       <file leaf-file-name="ProfesoresController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Profesores/ProfesoresController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-15.857142" vertical-offset="392" max-vertical-offset="1900">
+            <state vertical-scroll-proportion="0.0" vertical-offset="392" max-vertical-offset="1900">
               <caret line="50" column="16" selection-start-line="50" selection-start-column="16" selection-end-line="50" selection-end-column="51" />
               <folding />
             </state>
@@ -178,7 +197,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/Http/Kernel.php" />
         <option value="$PROJECT_DIR$/resources/views/profesores/reporte.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/actividades/nuevo.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/profesores/form.blade.php" />
@@ -227,11 +245,16 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/Deportistas/ActividadesAsignadas/ActividadesAsignadasController.php" />
         <option value="$PROJECT_DIR$/resources/views/deportistas/actividadesasignadas/reporte.blade.php" />
         <option value="$PROJECT_DIR$/app/Agenda/Agenda.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Api/ControladorAgenda.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Agenda/AgendaController.php" />
+<<<<<<< HEAD
+        <option value="$PROJECT_DIR$/.gitignore" />
+=======
 >>>>>>> f56f41e57e119b7979c5fa658f93f41bac15556c
         <option value="$PROJECT_DIR$/resources/views/agenda/calendario1.blade.php" />
+>>>>>>> master
         <option value="$PROJECT_DIR$/public/fullcalendar/calendario.js" />
+        <option value="$PROJECT_DIR$/resources/views/agenda/calendario1.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Api/ControladorAgenda.php" />
       </list>
     </option>
   </component>
@@ -267,6 +290,21 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope">
+        <subPane subId="Default">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="deportes">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+        <subPane subId="Tests" />
+      </pane>
       <pane id="ProjectPane">
         <subPane>
 <<<<<<< HEAD
@@ -640,21 +678,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope">
-        <subPane subId="Default">
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="deportes">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-        <subPane subId="Tests" />
-      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -663,7 +686,7 @@
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="SearchEverywhereHistoryKey" value="profeso&#9;FILE&#9;file:///Users/yamil/Documents/vagrant/deportes/app/Http/Controllers/Profesores/ProfesoresController.php&#10;agenda&#9;FILE&#9;file:///Users/yamil/Documents/vagrant/deportes/app/Http/Controllers/Agenda/AgendaController.php&#10;activi&#9;FILE&#9;file:///Users/yamil/Documents/vagrant/deportes/app/ActividadesAsignadas/Actividades_Asignadas.php&#10;route&#9;FILE&#9;file:///Users/yamil/Documents/vagrant/deportes/app/Http/routes.php&#10;cal&#9;FILE&#9;file:///Users/yamil/Documents/vagrant/deportes/resources/views/agenda/calendario1.blade.php&#10;factori&#9;FILE&#9;file:///Users/yamil/Documents/vagrant/deportes/tests/factories/factories.php&#10;routes&#9;FILE&#9;file:///Users/yamil/Documents/vagrant/deportes/app/Http/routes.php&#10;actividades&#9;null&#9;null&#10;activ&#9;FILE&#9;file:///Users/yamil/Documents/vagrant/deportes/app/Actividades/Actividad.php&#10;ac&#9;FILE&#9;file:///Users/yamil/Documents/vagrant/deportes/app/Actividades/Actividad.php&#10;profe&#9;FILE&#9;file:///Users/yamil/Documents/vagrant/deportes/app/Http/Controllers/Profesores/ProfesoresController.php&#10;profes&#9;FILE&#9;file:///Users/yamil/Documents/vagrant/deportes/app/Profesores/Profesor.php&#10;acti&#9;FILE&#9;file:///Users/yamil/Documents/vagrant/deportes/app/Http/Controllers/Actividades/ActividadesController.php&#10;formRe&#9;null&#9;null&#10;rou&#9;FILE&#9;file:///Users/yamil/Documents/vagrant/deportes/app/Http/routes.php&#10;Auth&#9;FILE&#9;file:///Users/yamil/Documents/vagrant/deportes/app/Http/Controllers/Auth/AuthController.php&#10;welcome&#9;null&#9;null&#10;Welco&#9;FILE&#9;file:///Users/yamil/Documents/vagrant/deportes/resources/views/welcome.blade.php&#10;Password&#9;null&#9;null" />
+    <property name="SearchEverywhereHistoryKey" value="activi&#9;FILE&#9;file:///Users/yamil/Documents/vagrant/deportes/app/Http/Controllers/Deportistas/ActividadesAsignadas/ActividadesAsignadasController.php&#10;profeso&#9;FILE&#9;file:///Users/yamil/Documents/vagrant/deportes/app/Http/Controllers/Profesores/ProfesoresController.php&#10;agenda&#9;FILE&#9;file:///Users/yamil/Documents/vagrant/deportes/app/Http/Controllers/Agenda/AgendaController.php&#10;route&#9;FILE&#9;file:///Users/yamil/Documents/vagrant/deportes/app/Http/routes.php&#10;cal&#9;FILE&#9;file:///Users/yamil/Documents/vagrant/deportes/resources/views/agenda/calendario1.blade.php&#10;factori&#9;FILE&#9;file:///Users/yamil/Documents/vagrant/deportes/tests/factories/factories.php&#10;routes&#9;FILE&#9;file:///Users/yamil/Documents/vagrant/deportes/app/Http/routes.php&#10;actividades&#9;null&#9;null&#10;activ&#9;FILE&#9;file:///Users/yamil/Documents/vagrant/deportes/app/Actividades/Actividad.php&#10;ac&#9;FILE&#9;file:///Users/yamil/Documents/vagrant/deportes/app/Actividades/Actividad.php&#10;profe&#9;FILE&#9;file:///Users/yamil/Documents/vagrant/deportes/app/Http/Controllers/Profesores/ProfesoresController.php&#10;profes&#9;FILE&#9;file:///Users/yamil/Documents/vagrant/deportes/app/Profesores/Profesor.php&#10;acti&#9;FILE&#9;file:///Users/yamil/Documents/vagrant/deportes/app/Http/Controllers/Actividades/ActividadesController.php&#10;formRe&#9;null&#9;null&#10;rou&#9;FILE&#9;file:///Users/yamil/Documents/vagrant/deportes/app/Http/routes.php&#10;Auth&#9;FILE&#9;file:///Users/yamil/Documents/vagrant/deportes/app/Http/Controllers/Auth/AuthController.php&#10;welcome&#9;null&#9;null&#10;Welco&#9;FILE&#9;file:///Users/yamil/Documents/vagrant/deportes/resources/views/welcome.blade.php&#10;Password&#9;null&#9;null" />
     <property name="FullScreen" value="false" />
     <property name="LayoutCode.rearrangeEntriesBlade" value="false" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
@@ -699,9 +722,6 @@
       <BehatRunner />
       <method />
     </configuration>
-    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
-      <method />
-    </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
       <node-options />
       <gulpfile />
@@ -709,6 +729,9 @@
       <arguments />
       <pass-parent-envs>true</pass-parent-envs>
       <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
       <method />
     </configuration>
     <list size="0" />
@@ -757,10 +780,14 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24959612" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
 <<<<<<< HEAD
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2835218" sideWeight="0.49779737" order="0" side_tool="false" content_ui="combo" />
+=======
+<<<<<<< HEAD
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2835218" sideWeight="0.49863014" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2584814" sideWeight="0.50136983" order="2" side_tool="true" content_ui="tabs" />
 =======
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27948305" sideWeight="0.49779737" order="0" side_tool="false" content_ui="combo" />
+>>>>>>> master
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.27544427" sideWeight="0.50220263" order="2" side_tool="true" content_ui="tabs" />
 >>>>>>> f56f41e57e119b7979c5fa658f93f41bac15556c
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -1051,13 +1078,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.060509555" vertical-offset="0" max-vertical-offset="628">
-          <caret line="2" column="4" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/js/libs/moment/moment.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-59.764164" vertical-offset="39387" max-vertical-offset="185098">
@@ -1139,7 +1159,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1520">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1169,15 +1188,36 @@
       </provider>
     </entry>
 <<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Profesores/ProfesoresController.php">
+=======
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/public/js/libs/moment/moment.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-59.764164" vertical-offset="39387" max-vertical-offset="185098">
           <caret line="19" column="31" selection-start-line="19" selection-start-column="31" selection-end-line="19" selection-end-column="31" />
 =======
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Deportistas/ActividadesAsignadas/ActividadesAsignadasController.php">
+>>>>>>> master
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="19" max-vertical-offset="2774">
-          <caret line="26" column="5" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="392" max-vertical-offset="1900">
+          <caret line="50" column="16" selection-start-line="50" selection-start-column="16" selection-end-line="50" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.36305732" vertical-offset="0" max-vertical-offset="628">
+          <caret line="12" column="23" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="23" />
+          <folding />
+>>>>>>> f56f41e57e119b7979c5fa658f93f41bac15556c
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Deportistas/ActividadesAsignadas/ActividadesAsignadasController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="114" max-vertical-offset="2774">
+          <caret line="45" column="16" selection-start-line="45" selection-start-column="16" selection-end-line="45" selection-end-column="16" />
           <folding />
         </state>
       </provider>
@@ -1187,24 +1227,13 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="190" max-vertical-offset="361">
           <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="31" />
           <folding />
->>>>>>> f56f41e57e119b7979c5fa658f93f41bac15556c
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/ControladorAgenda.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Agenda/AgendaController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="57" max-vertical-offset="1520">
-          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-          <folding>
-            <element signature="e#49#105#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/deportistas/actividadesasignadas/miusuario/reporte.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-16.964285" vertical-offset="152" max-vertical-offset="1634">
-          <caret line="33" column="80" selection-start-line="33" selection-start-column="80" selection-end-line="33" selection-end-column="105" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="95" max-vertical-offset="1919">
+          <caret line="53" column="12" selection-start-line="53" selection-start-column="12" selection-end-line="53" selection-end-column="12" />
           <folding />
         </state>
       </provider>
@@ -1214,31 +1243,40 @@
 =======
     <entry file="file://$PROJECT_DIR$/resources/views/deportistas/actividadesasignadas/reporte.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-16.285715" vertical-offset="209" max-vertical-offset="1786">
+        <state vertical-scroll-proportion="-23.75" vertical-offset="0" max-vertical-offset="1786">
           <caret line="35" column="96" selection-start-line="35" selection-start-column="96" selection-end-line="35" selection-end-column="108" />
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/resources/views/deportistas/actividadesasignadas/miusuario/reporte.blade.php">
+=======
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Profesores/ProfesoresController.php">
 >>>>>>> f56f41e57e119b7979c5fa658f93f41bac15556c
+>>>>>>> master
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-15.857142" vertical-offset="392" max-vertical-offset="1900">
-          <caret line="50" column="16" selection-start-line="50" selection-start-column="16" selection-end-line="50" selection-end-column="51" />
+        <state vertical-scroll-proportion="-16.964285" vertical-offset="152" max-vertical-offset="1634">
+          <caret line="33" column="80" selection-start-line="33" selection-start-column="80" selection-end-line="33" selection-end-column="105" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Agenda/AgendaController.php">
+    <entry file="file://$PROJECT_DIR$/public/fullcalendar/calendario.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.892858" vertical-offset="513" max-vertical-offset="1919">
-          <caret line="53" column="12" selection-start-line="53" selection-start-column="12" selection-end-line="53" selection-end-column="12" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2052">
+          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/agenda/calendario1.blade.php">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state vertical-scroll-proportion="-13.571428" vertical-offset="133" max-vertical-offset="1235">
+          <caret line="27" column="33" selection-start-line="27" selection-start-column="33" selection-end-line="27" selection-end-column="33" />
+          <folding />
+=======
 <<<<<<< HEAD
         <state vertical-scroll-proportion="0.0" vertical-offset="513" max-vertical-offset="912">
           <caret line="27" column="4" selection-start-line="27" selection-start-column="4" selection-end-line="27" selection-end-column="4" />
@@ -1248,11 +1286,19 @@
           <folding>
             <element signature="e#1793#1811#0#HTML" expanded="true" />
           </folding>
+>>>>>>> master
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/fullcalendar/calendario.js">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/ControladorAgenda.php">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state vertical-scroll-proportion="0.1488" vertical-offset="648" max-vertical-offset="1520">
+          <caret line="39" column="76" selection-start-line="39" selection-start-column="76" selection-end-line="39" selection-end-column="76" />
+          <folding>
+            <element signature="e#49#105#0#PHP" expanded="true" />
+          </folding>
+=======
         <state vertical-scroll-proportion="0.7125" vertical-offset="1235" max-vertical-offset="2204">
           <caret line="89" column="10" selection-start-line="89" selection-start-column="10" selection-end-line="89" selection-end-column="10" />
 >>>>>>> f56f41e57e119b7979c5fa658f93f41bac15556c
@@ -1273,6 +1319,7 @@
         <state vertical-scroll-proportion="2.5022972" vertical-offset="0" max-vertical-offset="2204">
           <caret line="86" column="21" selection-start-line="86" selection-start-column="21" selection-end-line="86" selection-end-column="21" />
           <folding />
+>>>>>>> master
         </state>
       </provider>
     </entry>
