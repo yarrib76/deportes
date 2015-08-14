@@ -111,7 +111,7 @@ class ActividadesAsignadasController extends Controller {
 	 */
 	public function update($actividades_asignadas)
 	{
-        $fecha = $this->concatenarFercha($_REQUEST);
+        $fecha = $this->concatenarFecha($_REQUEST);
         db::table('actividades_asignadas')
             ->where('id',$actividades_asignadas->id)
             ->update([
@@ -138,10 +138,10 @@ class ActividadesAsignadasController extends Controller {
 
     }
 
-    public function concatenarFercha($datos){
+    public function concatenarFecha($datos){
         $fecha = "";
         foreach ($datos as $dato){
-            if ($dato === 'L'or $dato === 'M'or $dato === 'Mi' or $dato === 'J' or $dato === 'V' or $dato === 'S' or $dato === 'D') {
+            if ($dato === 'L,'or $dato === 'M,'or $dato === 'Mi,' or $dato === 'J,' or $dato === 'V,' or $dato === 'S,' or $dato === 'D,') {
                 $fecha  = $fecha . $dato  ;
             }
         }

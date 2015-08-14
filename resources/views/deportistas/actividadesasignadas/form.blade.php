@@ -40,13 +40,13 @@
 <div class="form-group">
     {!! Form::label('date', 'Dias de Entrenamiento:', ['class' => 'col-sm-3 control-label']) !!}
     <div class="col-sm-6">
-        <input type=checkbox value='L' name='L' > Lunes
-        <input type=checkbox value='M' name='M'> Martes
-        <input type=checkbox value='Mi' name='Mi'> Miercoles
-        <input type=checkbox value='J' name='J'> Jueves
-        <input type=checkbox value='V' name='V'> Viernes
-        <input type=checkbox value='S' name='S'> Sabado
-        <input type=checkbox value='D' name='D'> Domingo
+        <input type=checkbox value='L,' name='L' > Lunes
+        <input type=checkbox value='M,' name='M'> Martes
+        <input type=checkbox value='Mi,' name='Mi'> Miercoles
+        <input type=checkbox value='J,' name='J'> Jueves
+        <input type=checkbox value='V,' name='V'> Viernes
+        <input type=checkbox value='S,' name='S'> Sabado
+        <input type=checkbox value='D,' name='D'> Domingo
     </div>
 </div>
 
