@@ -37,7 +37,7 @@ class ControladorAgenda extends Controller{
         foreach ($agendas as $agenda) {
             $agenda->load('actividadesAsignadas');
             $nombreActividadesAsignadas = $agenda->actividadesAsignadas->load('actividad')->actividad->nombre;
-            if ($agenda->title !== "Recuperar" and $agenda->title !== "Recuperado") {
+            if ($agenda->color !== "#C20000" and $agenda->color !== "#006600") {
                 $agenda->title = $nombreActividadesAsignadas;
                 $agendaFinal[$x] = $agenda;
             }
@@ -57,13 +57,13 @@ class ControladorAgenda extends Controller{
                         + ['end' => $agenda->end] + ['url' => $agenda->url]
                         + ['color' => $agenda->color] + ['allDay' => $agenda->allDay]
                         + ['start' => $agenda->start];
-                    if ($agenda->title == "Recuperar"){
-                        $agenedaFinal[$x] = $agenedaFinal[$x] + ['title' => 'Recuperar'];
+                    if ($agenda->color == "#C20000"){
+                        $agenedaFinal[$x] = $agenedaFinal[$x] + ['title' => $agenda->title];
                     }
-                    if ($agenda->title == "Recuperado"){
-                        $agenedaFinal[$x] = $agenedaFinal[$x] + ['title' => 'Recuperado'];
+                    if ($agenda->color == "#006600"){
+                        $agenedaFinal[$x] = $agenedaFinal[$x] + ['title' => $agenda->title];
                     }
-                    if ($agenda->title !== "Recuperar" and $agenda->title !== "Recuperado") {
+                    if ($agenda->color !== "#C20000" and $agenda->color !== "#006600") {
                         $agenedaFinal[$x] = $agenedaFinal[$x] + ['title' => $dato->actividad->nombre];
                     }
                     $x++;

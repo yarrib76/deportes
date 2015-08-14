@@ -8,11 +8,11 @@ $('#external-events .fc-event').each(function () {
 // it doesn't need to have a start or end
     var eventObject = {
         title: $.trim($(this).text()), // use the element's text as the event title
-        actividadAsignada_id: $.trim($(this).attr('actividadAsignada_id'))
+        actividadAsignada_id: $.trim($(this).attr('actividadAsignada_id')),
+        color: $.trim($(this).attr('color'))
     };
 // store the Event Object in the DOM element so we can get to it later
     $(this).data('eventObject', eventObject);
-
 // make the event draggable using jQuery UI
     $(this).draggable({
         zIndex: 999,
@@ -67,16 +67,8 @@ $('#calendar').fullCalendar({
                 var start = moment(copiedEventObject.start).format('YYYY-MM-DD');
                 var end = moment(end).format('YYYY-MM-DDTHH:mm:ssZ');
                 var actividadAsignada_id = copiedEventObject.actividadAsignada_id;
-                console.log(actividadAsignada_id);
-                var pp = 'title=' + title + '&start=' + start + '&end=' + start
-                    + '&color=' + color + '&actividadAsignada_id=' + actividadAsignada_id
-                if (title === "Recuperar") {
-                    var color = '#C20000';
-                }
-                else
-                if (title === "Recuperado"){
-                    var color = '#006600';
-                }
+                var color = copiedEventObject.color;
+
                 $.ajax({
                     url: '/agenda',
                     data: 'title=' + title + '&start=' + start + '&end=' + start
