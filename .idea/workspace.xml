@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="aa94d037-d7c1-4f61-aca3-0b543698aefa" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/ControladorAgenda.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/ControladorAgenda.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/fullcalendar/calendario.js" afterPath="$PROJECT_DIR$/public/fullcalendar/calendario.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/agenda/calendario1.blade.php" afterPath="$PROJECT_DIR$/resources/views/agenda/calendario1.blade.php" />
-    </list>
+    <list default="true" id="aa94d037-d7c1-4f61-aca3-0b543698aefa" name="Default" comment="" />
     <ignored path="deportes.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
