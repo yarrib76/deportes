@@ -26,7 +26,8 @@ class ActividadesAsignadasController extends Controller {
 	public function index()
 	{
         $actividades = Actividades_Asignadas::get()->load('profesor','actividad','usuario');
-        return view('deportistas.actividadesasignadas.reporte', compact('actividades'));
+        $total = $this->obtengoTotal($actividades);
+        return view('deportistas.actividadesasignadas.reporte', compact('actividades','total'));
 	}
 
     /**
@@ -38,7 +39,8 @@ class ActividadesAsignadasController extends Controller {
     {
         $usuario = Auth::user();
         $actividadesAsignadasAUnUsuario = $usuario->actividadesAsignadas()->get()->load('actividad','profesor');
-        return view('deportistas.actividadesasignadas.miusuario.reporte', compact('usuario','actividadesAsignadasAUnUsuario'));
+        $total = $this->obtengoTotal($actividadesAsignadasAUnUsuario);
+        return view('deportistas.actividadesasignadas.miusuario.reporte', compact('usuario','actividadesAsignadasAUnUsuario','total'));
     }
 	/**
 	 * Show the form for creating a new resource.
@@ -160,5 +162,13 @@ class ActividadesAsignadasController extends Controller {
 
         $actividades_asignadas->fecha = str_getcsv($actividades_asignadas->fecha);
         return $actividades_asignadas;
+    }
+
+    private function obtengoTotal($actividadesAsignadas){
+        $total = 0;
+        foreach($actividadesAsignadas as $actividadAsignada){
+            $total = $total + $actividadAsignada->costo;
+        }
+        return $total;
     }
 }

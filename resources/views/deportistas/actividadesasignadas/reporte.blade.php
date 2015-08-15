@@ -41,13 +41,13 @@
                             </table>
                         <table>
                             <td>
-                                {!! HTML::linkRoute('actividades_asignadas.create', ' Asignar Actividad', null , ['class' => 'btn btn-primary '] ) !!}
+                                <h4>Total: {{$total}}</h4>
                             </td>
-                            <td> &nbsp;</td>
-                            <td> &nbsp; </td>
-                            <td>
-                                <h4>Total</h4>
-                            </td>
+                            <tr>
+                                <td>
+                                    {!! HTML::linkRoute('actividades_asignadas.create', ' Asignar Actividad', null , ['class' => 'btn btn-primary '] ) !!}
+                                </td>
+                            </tr>
                         </table>
                     </div>
                 </div>

@@ -31,7 +31,16 @@
                                     @endforeach
                                 </tbody>
                             </table>
-                            {!! HTML::linkRoute('agenda.index', 'Asistencias', ['usuario' => $usuario->id] , ['class' => 'btn btn-primary'] ) !!}
+                        <table>
+                            <td>
+                                <h4>Total: {{$total}}</h4>
+                            </td>
+                            <tr>
+                                <td>
+                                    {!! HTML::linkRoute('agenda.index', 'Asistencias', ['usuario' => $usuario->id] , ['class' => 'btn btn-primary'] ) !!}
+                                </td>
+                            </tr>
+                        </table>
                     </div>
                 </div>
             </div>
