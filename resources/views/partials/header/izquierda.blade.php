@@ -30,10 +30,14 @@
                 <a href="#" class="dropdown-toggle fa fa-btn" data-toggle="dropdown">
                     Deportistas <b class="caret"></b>
                 </a>
-                <ul class="dropdown-menu">
+                <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
+                    <li class="divider"></li>
                     <li class="dropdown-submenu">
-                        <li><a href="/actividades_asignadas">Actividades Asignadas (Todos Los Usuarios) </a></li>
-                        <li><a href="/actividades_asignadas_miUsuario">Actividades Asignadas (Mi Usuario) </a></li>
+                        <a tabindex="-1" href="#">Actividades Asignadas</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/actividades_asignadas_miUsuario">Mi Usuario</a></li>
+                            <li><a href="/actividades_asignadas">Todos Los Usuarios</a></li>
+                        </ul>
                     </li>
                 </ul>
             </li>
