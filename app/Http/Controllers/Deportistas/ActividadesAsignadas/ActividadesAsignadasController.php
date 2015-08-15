@@ -29,6 +29,11 @@ class ActividadesAsignadasController extends Controller {
         return view('deportistas.actividadesasignadas.reporte', compact('actividades'));
 	}
 
+    /**
+     * Metodo que genera consulta las actividades asignada a al
+     * usario logueado y lo envia al reporte.
+     * @return \Illuminate\View\View
+     */
     public function indexMiUsuario()
     {
         $usuario = Auth::user();
@@ -99,7 +104,10 @@ class ActividadesAsignadasController extends Controller {
         //Asigno el Id del profesor de la actividad asignada
         $profesor_id = $actividades_asignadas->profesor_id;
         $costo = $actividades_asignadas->costo;
-        return view ('deportistas.actividadesasignadas.edit', compact('profesores','deportistas','actividades','deportista_id','actividad_id','profesor_id','actividades_asignadas','costo'));
+
+        $actividades_asignadas = $this->conviertoFormatoCsvToArray($actividades_asignadas);
+        $fechas = $actividades_asignadas->fecha;
+        return view ('deportistas.actividadesasignadas.edit', compact('profesores','deportistas','actividades','deportista_id','actividad_id','profesor_id','actividades_asignadas','costo','fechas'));
 
     }
 
@@ -146,5 +154,11 @@ class ActividadesAsignadasController extends Controller {
             }
         }
         return $fecha;
+    }
+
+    public function conviertoFormatoCsvToArray($actividades_asignadas){
+
+        $actividades_asignadas->fecha = str_getcsv($actividades_asignadas->fecha);
+        return $actividades_asignadas;
     }
 }
