@@ -61,7 +61,7 @@ class ActividadesAsignadasController extends Controller {
 	 */
 	public function store()
 	{
-        $fecha = $this->concatenarFercha($_REQUEST);
+        $fecha = $this->concatenarFecha($_REQUEST);
         Actividades_Asignadas::create([
             'usuario_id' => Input::get('deportista_id'),
             'actividad_id' => Input::get('actividad_id'),
