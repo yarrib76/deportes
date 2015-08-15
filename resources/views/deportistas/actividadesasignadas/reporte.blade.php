@@ -39,7 +39,16 @@
                                     @endforeach
                                 </tbody>
                             </table>
-                            {!! HTML::linkRoute('actividades_asignadas.create', ' Asignar Actividad', null , ['class' => 'btn btn-primary '] ) !!}
+                        <table>
+                            <td>
+                                {!! HTML::linkRoute('actividades_asignadas.create', ' Asignar Actividad', null , ['class' => 'btn btn-primary '] ) !!}
+                            </td>
+                            <td> &nbsp;</td>
+                            <td> &nbsp; </td>
+                            <td>
+                                <h4>Total</h4>
+                            </td>
+                        </table>
                     </div>
                 </div>
             </div>
