@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::model('actividades_asignadas', 'Deportes\ActividadesAsignadas\Actividades_Asignadas');
 Route::model('agenda', 'Deportes\Agenda\Agenda');
+Route::model('pagos', 'Deportes\Pagos\Pagos');
 
 
 Route::get('/', 'Actividades\ActividadesController@index');
@@ -35,6 +36,9 @@ Route::resource('profesor', 'Profesores\ProfesoresController');
 //Vista y ABM Agenda
 Route::resource('agenda', 'Agenda\AgendaController');
 
+//Vista y ABM Pagos
+Route::resource('pagos', 'Deportistas\Pagos\PagosController');
+
 //Vista y ABM ActividadesAsignadas
 Route::resource('actividades_asignadas', 'Deportistas\ActividadesAsignadas\ActividadesAsignadasController');
 Route::get('actividades_asignadas_miUsuario', 'Deportistas\ActividadesAsignadas\ActividadesAsignadasController@indexMiUsuario');
@@ -45,4 +49,5 @@ Route::group(['prefix' => 'api'],
 
         Route::get('/profesores', 'Api\ControladorProfesores@listaProfesores');
         Route::get('/agenda', 'Api\ControladorAgenda@listaCalendario');
+        Route::get('/pagos', 'Api\ControladorPagos@listaPagos');
     });

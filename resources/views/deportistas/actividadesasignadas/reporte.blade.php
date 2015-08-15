@@ -34,6 +34,7 @@
                                             {!! HTML::linkRoute('actividades_asignadas.edit', ' Editar', $actividad->id , ['class' => 'btn btn-primary'] ) !!}
                                             {!! HTML::linkRoute('actividades_asignadas.destroy', ' Borrar', $actividad->id , ['class' => 'btn btn-danger', 'data-method' => 'DELETE','data-confirm' => '¿Seguro desea eliminar la Actividad ' . $actividad->nombre . '?', 'rel' => 'nofollow']) !!}
                                             {!! HTML::linkRoute('agenda.index', 'Asistencia', ['actividad_id' => $actividad->id] , ['class' => 'btn btn-primary'] ) !!}
+                                            {!! HTML::linkRoute('pagos.index', 'Pagos', ['actividad_id' => $actividad->id] , ['class' => 'btn btn-primary'] ) !!}
                                         </td>
                                     </tr>
                                     @endforeach

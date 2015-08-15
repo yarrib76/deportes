@@ -29,4 +29,7 @@ class Actividades_Asignadas extends Model {
 
     }
 
+    public function pagos(){
+        return $this->hasMany('Deportes\Pagos\Pagos', 'actividadAsignada_id');
+    }
 }

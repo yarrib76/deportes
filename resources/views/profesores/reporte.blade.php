@@ -11,6 +11,7 @@
                                     <th>Nombre</th>
                                     <th>Apellido</th>
                                     <th>Actividad</th>
+                                    <th>Movil</th>
                                     <th>Accion</th>
                                 </tr>
                                     @foreach($profesores as $profesor)
@@ -18,6 +19,7 @@
                                         <td>{{$profesor->nombre}}</td>
                                         <td>{{$profesor->apellido}}</td>
                                         <td>{{$profesor->actividad->nombre}}</td>
+                                        <td>{{$profesor->movil}}</td>
                                         <td>
                                             {!! HTML::linkRoute('profesor.edit', ' Editar', $profesor->id , ['class' => 'btn btn-primary'] ) !!}
                                             {!! HTML::linkRoute('profesor.destroy', ' Borrar', $profesor->id , ['class' => 'btn btn-danger', 'data-method' => 'DELETE','data-confirm' => '¿Seguro desea eliminar el profesro ' . $profesor->nombre . '?', 'rel' => 'nofollow']) !!}

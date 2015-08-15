@@ -16,6 +16,14 @@
 
 <div class="form-group">
 
+    {!! Form::label('movil', 'Movil :', ['class' => 'col-sm-3 control-label']) !!}
+    <div class="col-sm-6">
+        {!! Form::input('movil', 'movil', null, ['id' => 'movil', 'class' => 'form-control patente', 'name' => 'movil', 'placeholder' => 'Numero de Movil'])  !!}
+    </div>
+</div>
+
+<div class="form-group">
+
     {!! Form::label('actividad', 'Actividad:', ['class' => 'col-sm-3 control-label']) !!}
 
     <div class="col-sm-6">

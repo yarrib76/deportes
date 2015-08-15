@@ -1,28 +1,24 @@
-<?php namespace Deportes\Http\Controllers\Profesores;
+<?php namespace Deportes\Http\Controllers\Deportistas\Pagos;
 
-use Deportes\Actividades\Actividad;
+use Deportes\ActividadesAsignadas\Actividades_Asignadas;
 use Deportes\Http\Requests;
 use Deportes\Http\Controllers\Controller;
 
-use Deportes\Profesores\Profesor;
+use Deportes\Pagos\Pagos;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 
-class ProfesoresController extends Controller {
+class PagosController extends Controller {
 
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-    /**
+	/**
 	 * Display a listing of the resource.
 	 *
 	 * @return Response
 	 */
 	public function index()
 	{
-        $profesores = Profesor::all()->load('actividad');
-        return view('profesores.reporte', compact('profesores'));
+        $actividadAsignada = Actividades_Asignadas::find(Input::get('actividad_id'))->load('actividad');
+        return view('deportistas.pagos.calendario1', compact ('actividadAsignada'));
 	}
 
 	/**
@@ -32,8 +28,7 @@ class ProfesoresController extends Controller {
 	 */
 	public function create()
 	{
-		$actividades = Actividad::get()->lists('nombre','id');
-        return view('profesores.nuevo', compact('actividades'));
+		//
 	}
 
 	/**
@@ -43,13 +38,14 @@ class ProfesoresController extends Controller {
 	 */
 	public function store()
 	{
-        Profesor::create([
-            'nombre' => Input::get('nombre'),
-            'apellido' => Input::get('apellido'),
-            'movil' => Input::get('movil'),
-            'actividad_id' => Input::get('actividad_id')
+        Pagos::create([
+            'title' => Input::get('title'),
+            'start' => Input::get('start'),
+            'end' => Input::get('end'),
+            'costo' => Input::get('costo'),
+            'actividadAsignada_id' => Input::get('actividadAsignada_id'),
+            //  'url' => Input::get('url')
         ]);
-        return redirect()->route('profesor.index');
 	}
 
 	/**
@@ -71,7 +67,7 @@ class ProfesoresController extends Controller {
 	 */
 	public function edit($id)
 	{
-		dd('Editar al Profesor',$id);
+		//
 	}
 
 	/**
@@ -91,11 +87,9 @@ class ProfesoresController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function destroy($id)
+	public function destroy($pagos)
 	{
-        $profesor = Profesor::find($id);
-		$profesor->delete();
-        return redirect()->route('profesor.index');
+		$pagos->delete();
 	}
 
 }

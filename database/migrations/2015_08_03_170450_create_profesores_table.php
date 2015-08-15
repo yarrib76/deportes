@@ -18,6 +18,7 @@ class CreateProfesoresTable extends Migration {
 			$table->timestamps();
             $table->string('nombre');
             $table->string('apellido')->nullable();
+            $table->integer('movil');
             $table->softDeletes();
 
             $table->integer('actividad_id')->unsigned();
