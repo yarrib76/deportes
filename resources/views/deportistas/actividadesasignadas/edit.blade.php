@@ -24,4 +24,5 @@
 
 @section('extra-javascript')
     <script src="/js/cargoModelosEnSelect.js"></script>
+    <script src="/js/tests/caseFecha.js"></script>
 @stop
