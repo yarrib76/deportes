@@ -18,7 +18,6 @@ Route::model('agenda', 'Deportes\Agenda\Agenda');
 Route::model('pagos', 'Deportes\Pagos\Pagos');
 
 
-Route::get('/', 'Actividades\ActividadesController@index');
 
 Route::get('home', 'Actividades\ActividadesController@index');
 
@@ -27,9 +26,12 @@ Route::controllers([
 	'password' => 'Auth\PasswordController',
 ]);
 
-//Vista y ABM Actividades
-Route::resource('actividad','Actividades\ActividadesController');
+Route::group(['middleware' => 'role'], function() {
+    Route::get('/', 'Actividades\ActividadesController@index');
+});
 
+//Vista y ABM Actividades
+Route::resource('actividad', 'Actividades\ActividadesController');
 //Vista y ABM Proferores
 Route::resource('profesor', 'Profesores\ProfesoresController');
 
@@ -43,6 +45,8 @@ Route::resource('pagos', 'Deportistas\Pagos\PagosController');
 Route::resource('actividades_asignadas', 'Deportistas\ActividadesAsignadas\ActividadesAsignadasController');
 Route::get('actividades_asignadas_miUsuario', 'Deportistas\ActividadesAsignadas\ActividadesAsignadasController@indexMiUsuario');
 
+//Vista Invitados
+Route::get('invitados',['as' => 'invitados.index', 'uses' => 'Invitados\InvitadosController@index']);
 
 Route::group(['prefix' => 'api'],
     function () {

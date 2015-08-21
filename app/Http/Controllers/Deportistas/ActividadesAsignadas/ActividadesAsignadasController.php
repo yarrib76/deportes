@@ -17,6 +17,7 @@ class ActividadesAsignadasController extends Controller {
     public function __construct()
     {
         $this->middleware('auth');
+        $this->middleware('role');
     }
 	/**
 	 * Display a listing of the resource.
@@ -25,7 +26,7 @@ class ActividadesAsignadasController extends Controller {
 	 */
 	public function index()
 	{
-            $actividades = Actividades_Asignadas::get()->load('profesor','actividad','usuario');
+        $actividades = Actividades_Asignadas::get()->load('profesor','actividad','usuario');
         $total = $this->obtengoTotal($actividades);
         return view('deportistas.actividadesasignadas.reporte', compact('actividades','total'));
 	}
