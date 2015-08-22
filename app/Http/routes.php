@@ -26,7 +26,7 @@ Route::controllers([
 	'password' => 'Auth\PasswordController',
 ]);
 
-Route::group(['middleware' => 'role'], function() {
+Route::group(['middleware' => 'role.profe'], function() {
     Route::get('/', 'Actividades\ActividadesController@index');
 });
 

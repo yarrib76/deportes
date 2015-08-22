@@ -6,15 +6,19 @@ use Deportes\Http\Controllers\Controller;
 
 class InvitadosController extends Controller {
 
-	/**
+    public function __construct()
+    {
+        $this->middleware('auth');
+        $this->middleware('role.profe');
+    }
+    /**
 	 * Display a listing of the resource.
 	 *
 	 * @return Response
 	 */
 	public function index()
 	{
-        $tipoUsuario = 'invitado';
-         return view('agenda.invitados.calendario1', compact('actividadAsignada','deportista','tipoUsuario'));
+         return view('agenda.invitados.calendario1');
     }
 
 	/**

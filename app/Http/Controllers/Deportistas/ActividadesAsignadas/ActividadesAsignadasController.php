@@ -17,7 +17,7 @@ class ActividadesAsignadasController extends Controller {
     public function __construct()
     {
         $this->middleware('auth');
-        $this->middleware('role');
+        $this->middleware('role.alumno');
     }
 	/**
 	 * Display a listing of the resource.

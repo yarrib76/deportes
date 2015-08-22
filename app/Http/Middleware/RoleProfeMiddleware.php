@@ -4,7 +4,7 @@ use Closure;
 use Deportes\Roles\UserRole\UserRole;
 use Illuminate\Support\Facades\Auth;
 
-class RoleMiddleware {
+class RoleProfeMiddleware {
 
 	/**
 	 * Handle an incoming request.
@@ -18,13 +18,13 @@ class RoleMiddleware {
         if (Auth::check())
         {
             $role = UserRole::where('user_id',Auth::user()->id)->get();
-            switch ($role[0]->role_id){
-                case 1:
-                    return redirect()->route('invitados.index');
-                case 2:
-                    return $next($request);
+            if ($role[0]->role_id == 1)
+            {
+                return view('agenda.invitados.calendario1');
             }
-          //  return $next($request);
+            return redirect()->route('actividad.index');
+
+
         }
         return $next($request);
 	}
