@@ -37,10 +37,12 @@ class ProfesoresController extends Controller {
 	{
 		$actividades = Actividad::get()->lists('nombre','id');
         $profesores = UserRole::where('role_id',1)->get()->load('usuario');
-        $profesores = $this->formateoDatos($profesores);
-        return view('profesores.nuevo', compact('actividades','profesores'));
+        if (!$profesores->isEmpty()){
+            $profesores = $this->formateoDatos($profesores);
+            return view('profesores.nuevo', compact('actividades','profesores'));
+        }
+        return response('No hay Profesores creados en la aplicacion');
 	}
-
 	/**
 	 * Store a newly created resource in storage.
 	 *

@@ -29,8 +29,10 @@ class ActividadesAsignadasController extends Controller {
 	{
         $actividades = Actividades_Asignadas::get()->load('profesor','usuario','actividad');
         $total = $this->obtengoTotal($actividades);
-        $actividades = $this->preparoDatos($actividades);
-        return view('deportistas.actividadesasignadas.reporte', compact('actividades','total','datos'));
+        if (!$actividades->isEmpty()){
+            $actividades = $this->preparoDatos($actividades);
+        }
+        return view('deportistas.actividadesasignadas.reporte', compact('actividades','total'));
 	}
 
     /**
@@ -52,6 +54,7 @@ class ActividadesAsignadasController extends Controller {
 	 */
 	public function create()
 	{
+        //El 2 indica que el usuario tiene rol de Alumno
         $deportistas = UserRole::where('role_id', 2)->get()->load('usuario');
         $deportistas = $this->formateoDatosAlumnos($deportistas);
         $actividades = Actividad::get()->sortBy('id')->lists('nombre','id');
@@ -201,7 +204,9 @@ class ActividadesAsignadasController extends Controller {
             $conFormato [$x]['id'] = $dato->id;
             $conFormato [$x]['alumno'] = $dato->usuario->name;
             $conFormato [$x]['actividad'] = $dato->actividad->nombre;
-            $conFormato [$x]['profesor'] = $dato->profesor->load('usuario')->usuario->name;
+            if ($dato->profesor){
+                $conFormato [$x]['profesor'] = $dato->profesor->load('usuario')->usuario->name;
+            } else {$conFormato [$x]['profesor'] = 'Fue Eliminado';}
             $conFormato [$x]['fecha'] = $dato->fecha;
             $conFormato [$x]['costo'] = $dato->costo;
             $x++;
