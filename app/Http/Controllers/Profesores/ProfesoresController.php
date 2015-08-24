@@ -5,6 +5,8 @@ use Deportes\Http\Requests;
 use Deportes\Http\Controllers\Controller;
 
 use Deportes\Profesores\Profesor;
+use Deportes\Roles\UserRole\UserRole;
+use Deportes\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 
@@ -22,7 +24,7 @@ class ProfesoresController extends Controller {
 	 */
 	public function index()
 	{
-        $profesores = Profesor::all()->load('actividad');
+        $profesores = Profesor::all()->load('actividad','usuario');
         return view('profesores.reporte', compact('profesores'));
 	}
 
@@ -34,7 +36,9 @@ class ProfesoresController extends Controller {
 	public function create()
 	{
 		$actividades = Actividad::get()->lists('nombre','id');
-        return view('profesores.nuevo', compact('actividades'));
+        $profesores = UserRole::where('role_id',1)->get()->load('usuario');
+        $profesores = $this->formateoDatos($profesores);
+        return view('profesores.nuevo', compact('actividades','profesores'));
 	}
 
 	/**
@@ -45,10 +49,8 @@ class ProfesoresController extends Controller {
 	public function store()
 	{
         Profesor::create([
-            'nombre' => Input::get('nombre'),
-            'apellido' => Input::get('apellido'),
-            'movil' => Input::get('movil'),
-            'actividad_id' => Input::get('actividad_id')
+            'actividad_id' => Input::get('actividad_id'),
+            'usuario_id' => Input::get('profesor_id')
         ]);
         return redirect()->route('profesor.index');
 	}
@@ -98,5 +100,13 @@ class ProfesoresController extends Controller {
 		$profesor->delete();
         return redirect()->route('profesor.index');
 	}
+
+    public function formateoDatos($datos){
+
+        foreach ($datos as $dato){
+            $conFormato[$dato->usuario->id] = $dato->usuario->name;
+        }
+        return $conFormato;
+    }
 
 }

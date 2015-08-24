@@ -18,7 +18,7 @@ class RoleProfeMiddleware {
         if (Auth::check())
         {
             $role = UserRole::where('user_id',Auth::user()->id)->get();
-            if ($role[0]->role_id == 1)
+            if (!$role->isEmpty() and $role[0]->role_id == 1)
             {
                 return view('agenda.invitados.calendario1');
             }

@@ -1,8 +1,9 @@
 <div class="form-group">
 
-    {!! Form::label('nombre', 'Nombre :', ['class' => 'col-sm-3 control-label']) !!}
+    {!! Form::label('profesor', 'Profesor:', ['class' => 'col-sm-3 control-label']) !!}
+
     <div class="col-sm-6">
-        {!! Form::input('nombre', 'nombre', null, ['id' => 'nombre', 'class' => 'form-control patente', 'name' => 'nombre', 'placeholder' => 'Nombre del Profesor'])  !!}
+        {!! Form::select('profesor', $profesores, null, ['id' => 'profesor', 'class' => 'form-control', 'name' => 'profesor_id']) !!}
     </div>
 </div>
 

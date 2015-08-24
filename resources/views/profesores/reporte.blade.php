@@ -8,18 +8,14 @@
                     <div class="panel-body">
                             <table id="reporte" class="table table-striped table-bordered records_list">
                                 <tr>
-                                    <th>Nombre</th>
-                                    <th>Apellido</th>
+                                    <th>Nombre Profesor</th>
                                     <th>Actividad</th>
-                                    <th>Movil</th>
                                     <th>Accion</th>
                                 </tr>
                                     @foreach($profesores as $profesor)
                                     <tr>
-                                        <td>{{$profesor->nombre}}</td>
-                                        <td>{{$profesor->apellido}}</td>
+                                        <td>{{$profesor->usuario->name}}</td>
                                         <td>{{$profesor->actividad->nombre}}</td>
-                                        <td>{{$profesor->movil}}</td>
                                         <td>
                                             {!! HTML::linkRoute('profesor.edit', ' Editar', $profesor->id , ['class' => 'btn btn-primary'] ) !!}
                                             {!! HTML::linkRoute('profesor.destroy', ' Borrar', $profesor->id , ['class' => 'btn btn-danger', 'data-method' => 'DELETE','data-confirm' => '¿Seguro desea eliminar el profesro ' . $profesor->nombre . '?', 'rel' => 'nofollow']) !!}
@@ -27,7 +23,7 @@
                                     </tr>
                                     @endforeach
                             </table>
-                            {!! HTML::linkRoute('profesor.create', ' Agregar Profesor', null , ['class' => 'btn btn-primary fa fa-taxi'] ) !!}
+                            {!! HTML::linkRoute('profesor.create', ' Asignar ', null , ['class' => 'btn btn-primary'] ) !!}
                     </div>
                 </div>
             </div>
