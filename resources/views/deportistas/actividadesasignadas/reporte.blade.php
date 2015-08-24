@@ -22,11 +22,7 @@
                                     <tr>
                                         <td>{{$actividad['alumno']}}</td>
                                         <td>{{$actividad['actividad']}}</td>
-                                        @if (isset($actividad['profesor']))
-                                            <td>{{$actividad['profesor']}}</td>
-                                        @else
-                                            <td>Fue Eliminado</td>
-                                        @endif
+                                        <td>{{$actividad['profesor']}}</td>
                                         <td>{{$actividad['fecha']}}</td>
                                         <td>{{$actividad['costo']}}</td>
 

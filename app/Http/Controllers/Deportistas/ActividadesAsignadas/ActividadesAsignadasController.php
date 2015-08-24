@@ -45,6 +45,7 @@ class ActividadesAsignadasController extends Controller {
         $usuario = Auth::user();
         $actividadesAsignadasAUnUsuario = $usuario->actividadesAsignadas()->get()->load('actividad','profesor');
         $total = $this->obtengoTotal($actividadesAsignadasAUnUsuario);
+        $actividadesAsignadasAUnUsuario = $this->preparoDatos($actividadesAsignadasAUnUsuario);
         return view('deportistas.actividadesasignadas.miusuario.reporte', compact('usuario','actividadesAsignadasAUnUsuario','total'));
     }
 	/**
