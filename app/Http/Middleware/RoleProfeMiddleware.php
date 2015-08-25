@@ -20,7 +20,7 @@ class RoleProfeMiddleware {
             $role = UserRole::where('user_id',Auth::user()->id)->get();
             if (!$role->isEmpty() and $role[0]->role_id == 1)
             {
-                return view('agenda.invitados.calendario1');
+                return $next($request);
             }
             return redirect()->route('actividad.index');
 
