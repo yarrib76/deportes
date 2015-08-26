@@ -16,6 +16,7 @@
             <script>
                 var tipoConsulta = "usuario";
                 var id=document.getElementById("usuario").value;
+                var profesor_id = {{{$usuarioIdProfesor}}};
             </script>
             <div id='calendar'></div>
 

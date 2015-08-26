@@ -10,7 +10,6 @@ $(document).ready(function() {
 function calendar(id) {
     /* initialize the calendar
      -----------------------------------------------------------------*/
-    console.log(id);
     $('#calendar').fullCalendar({
         header: {
             left: 'prev,next today',
@@ -20,8 +19,8 @@ function calendar(id) {
     });
     $.ajax({
         type: "GET",
-        url: '/api/agenda?',
-        data: tipoConsulta + '_id=' + id,
+        url: '/api/agendaProfesores?',
+        data: tipoConsulta + '_id=' + id + '&' + 'profesor_id' + '=' + profesor_id,
             success: function(events)
             {
                 $('#calendar').fullCalendar('removeEvents');

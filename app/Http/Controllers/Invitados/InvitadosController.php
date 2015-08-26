@@ -3,6 +3,7 @@
 use Deportes\ActividadesAsignadas\Actividades_Asignadas;
 use Deportes\Http\Requests;
 use Deportes\Http\Controllers\Controller;
+use Deportes\Profesores\Profesor;
 use Illuminate\Support\Facades\Auth;
 
 
@@ -20,10 +21,11 @@ class InvitadosController extends Controller {
 	 */
 	public function index()
 	{
-        $profesor_id = Auth::user()->id;
-        $profesores = Actividades_Asignadas::where('profesor_id', $profesor_id)->get()->load('usuario');
+        $profesor_id = Profesor::where('usuario_id', Auth::user()->id)->get();
+        $usuarioIdProfesor = Auth::user()->id;
+        $profesores = Actividades_Asignadas::where('profesor_id', $profesor_id[0]->id)->get()->load('usuario');
         $usuarios = $this->formateoDatosAlumnos($profesores);
-        return view('agenda.invitados.calendario1', compact('usuarios'));
+        return view('agenda.invitados.calendario1', compact('usuarios','usuarioIdProfesor'));
     }
 
 	/**
