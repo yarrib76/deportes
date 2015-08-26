@@ -16,14 +16,16 @@ class CreateProfesoresTable extends Migration {
 		{
 			$table->increments('id');
 			$table->timestamps();
-            $table->string('nombre');
-            $table->string('apellido')->nullable();
-            $table->integer('movil');
+
             $table->softDeletes();
 
             $table->integer('actividad_id')->unsigned();
             $table->foreign('actividad_id')->references('id')->on('actividades')->onDelete('cascade');
-		});
+
+            $table->integer('usuario_id')->unsigned();
+            $table->foreign('usuario_id')->references('id')->on('users');
+
+        });
 	}
 
 	/**

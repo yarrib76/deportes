@@ -11,9 +11,7 @@ class ControladorProfesores extends Controller{
 
     public function listaProfesores()
     {
-        return Response::json(DB::table('profesores')
-            ->where('actividad_id',  Input::get('category_id'))
-            ->where('deleted_at', null)
-            ->get());
+        return Response::json(Profesor::where('actividad_id', Input::get('category_id'))
+            ->get()->load('usuario'));
     }
 }

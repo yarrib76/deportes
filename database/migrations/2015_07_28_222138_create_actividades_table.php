@@ -20,7 +20,8 @@ class CreateActividadesTable extends Migration {
             $table->string('descripcion')->nullable();
             $table->string('club');
             $table->unique(['nombre','club']);
-		});
+
+        });
 	}
 
 	/**

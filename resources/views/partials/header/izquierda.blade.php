@@ -18,11 +18,11 @@
         <ul class="nav navbar-nav">
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle fa fa-btn" data-toggle="dropdown">
-                    ABM <b class="caret"></b>
+                    Actividades <b class="caret"></b>
                 </a>
                 <ul class="dropdown-menu">
-                    <li><a href="/actividad"> Actividades </a></li>
-                    <li><a href="/profesor"> Profesores </a></li>
+                    <li><a href="/actividad"> Crear </a></li>
+                    <li><a href="/profesor"> Asignar a un Profesor </a></li>
                 </ul>
             </li>
             <li class="dropdown">

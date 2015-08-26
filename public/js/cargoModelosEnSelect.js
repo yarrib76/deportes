@@ -11,7 +11,7 @@ $(document).ready(function() {
             dataType: "json",
             success:function(datos, textStatus, jqXHR){
                 $.each(datos,function(i, value ){
-                    $('#profesor').append('<option value=' + value['id']+ '>' + value['nombre'] + '</option>');
+                    $('#profesor').append('<option value=' + value['id']+ '>' + value['usuario']['name'] + '</option>');
                 }); // each
                 $('#profesor' ).change();
             },

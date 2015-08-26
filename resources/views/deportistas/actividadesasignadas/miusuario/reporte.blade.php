@@ -18,15 +18,10 @@
                                 <tbody>
                                     @foreach($actividadesAsignadasAUnUsuario as $actividad)
                                     <tr>
-                                        <td>{{$actividad->actividad->nombre}}</td>
-                                        @if (isset($actividad->profesor->nombre))
-                                            <td>{{$actividad->profesor->nombre}}</td>
-                                        @else
-                                            <td>Fue Eliminado</td>
-                                        @endif
-                                        <td>{{$actividad->fecha}}</td>
-                                        <td>{{$actividad->costo}}</td>
-
+                                        <td>{{$actividad['actividad']}}</td>
+                                        <td>{{$actividad['profesor']}}</td>
+                                        <td>{{$actividad['fecha']}}</td>
+                                        <td>{{$actividad['costo']}}</td>
                                     </tr>
                                     @endforeach
                                 </tbody>
@@ -37,7 +32,7 @@
                             </td>
                             <tr>
                                 <td>
-                                    {!! HTML::linkRoute('agenda.index', 'Asistencias', ['usuario' => $usuario->id] , ['class' => 'btn btn-primary'] ) !!}
+                                    {!! HTML::linkRoute('agenda.index', 'Asistencias', ['usuario' => $usuario['id']] , ['class' => 'btn btn-primary'] ) !!}
                                 </td>
                             </tr>
                         </table>

@@ -6,6 +6,7 @@ use Deportes\Http\Requests;
 use Deportes\Http\Controllers\Controller;
 
 use Deportes\Profesores\Profesor;
+use Deportes\Roles\UserRole\UserRole;
 use Deportes\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -26,8 +27,11 @@ class ActividadesAsignadasController extends Controller {
 	 */
 	public function index()
 	{
-        $actividades = Actividades_Asignadas::get()->load('profesor','actividad','usuario');
+        $actividades = Actividades_Asignadas::get()->load('profesor','usuario','actividad');
         $total = $this->obtengoTotal($actividades);
+        if (!$actividades->isEmpty()){
+            $actividades = $this->preparoDatos($actividades);
+        }
         return view('deportistas.actividadesasignadas.reporte', compact('actividades','total'));
 	}
 
@@ -41,6 +45,7 @@ class ActividadesAsignadasController extends Controller {
         $usuario = Auth::user();
         $actividadesAsignadasAUnUsuario = $usuario->actividadesAsignadas()->get()->load('actividad','profesor');
         $total = $this->obtengoTotal($actividadesAsignadasAUnUsuario);
+        $actividadesAsignadasAUnUsuario = $this->preparoDatos($actividadesAsignadasAUnUsuario);
         return view('deportistas.actividadesasignadas.miusuario.reporte', compact('usuario','actividadesAsignadasAUnUsuario','total'));
     }
 	/**
@@ -50,10 +55,13 @@ class ActividadesAsignadasController extends Controller {
 	 */
 	public function create()
 	{
-        $deportistas = User::get()->lists('name','id');
+        //El 2 indica que el usuario tiene rol de Alumno
+        $deportistas = UserRole::where('role_id', 2)->get()->load('usuario');
+        $deportistas = $this->formateoDatosAlumnos($deportistas);
         $actividades = Actividad::get()->sortBy('id')->lists('nombre','id');
         $actividad_id = Actividad::get()->first()->id;
-        $profesores = Profesor::where('actividad_id', $actividad_id)->get()->lists('nombre','id');
+        $profesores = Profesor::where('actividad_id', $actividad_id)->get()->load('usuario');
+        $profesores = $this->formateoDatosProfesores($profesores);
         return view ('deportistas.actividadesasignadas.nuevo', compact('profesores','deportistas','actividades'));
 	}
 
@@ -171,5 +179,39 @@ class ActividadesAsignadasController extends Controller {
             $total = $total + $actividadAsignada->costo;
         }
         return $total;
+    }
+
+    //Paso los datos a un array para porder levantarlo con el select de Profesores
+    public function formateoDatosProfesores($datos){
+
+        foreach ($datos as $dato){
+            $conFormato[$dato->id] = $dato->usuario->name;
+        }
+        return $conFormato;
+    }
+
+    //Paso los datos a un array para porder levantarlo con el select de Alumnos
+    public function formateoDatosAlumnos($datos){
+
+        foreach ($datos as $dato){
+            $conFormato[$dato->usuario->id] = $dato->usuario->name;
+        }
+        return $conFormato;
+    }
+//Preparo datos para enviarlos al Reporte
+    public function preparoDatos($datos){
+        $x = 0;
+        foreach ($datos as $dato){
+            $conFormato [$x]['id'] = $dato->id;
+            $conFormato [$x]['alumno'] = $dato->usuario->name;
+            $conFormato [$x]['actividad'] = $dato->actividad->nombre;
+            if ($dato->profesor){
+                $conFormato [$x]['profesor'] = $dato->profesor->load('usuario')->usuario->name;
+            } else {$conFormato [$x]['profesor'] = 'Fue Eliminado';}
+            $conFormato [$x]['fecha'] = $dato->fecha;
+            $conFormato [$x]['costo'] = $dato->costo;
+            $x++;
+        }
+       return $conFormato;
     }
 }

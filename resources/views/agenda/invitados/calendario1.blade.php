@@ -4,8 +4,20 @@
         <div id='wrap'>
 
             <div id='external-events'>
-            </div>
+                <div class="form-group">
 
+                    {!! Form::label('usuario', 'Seleccionar Alumno:', ['class' => 'col-sm-3 control-label']) !!}
+
+                    <div class="col-sm-12">
+                        {!! Form::select('usuario', $usuarios, null, ['id' => 'usuario', 'class' => 'form-control', 'name' => 'usuario_id']) !!}
+                    </div>
+                </div>
+            </div>
+            <script>
+                var tipoConsulta = "usuario";
+                var id=document.getElementById("usuario").value;
+                var profesor_id = {{{$usuarioIdProfesor}}};
+            </script>
             <div id='calendar'></div>
 
             <div style='clear:both'></div>

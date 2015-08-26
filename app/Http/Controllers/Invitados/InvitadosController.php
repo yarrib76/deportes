@@ -1,7 +1,10 @@
 <?php namespace Deportes\Http\Controllers\Invitados;
 
+use Deportes\ActividadesAsignadas\Actividades_Asignadas;
 use Deportes\Http\Requests;
 use Deportes\Http\Controllers\Controller;
+use Deportes\Profesores\Profesor;
+use Illuminate\Support\Facades\Auth;
 
 
 class InvitadosController extends Controller {
@@ -18,7 +21,11 @@ class InvitadosController extends Controller {
 	 */
 	public function index()
 	{
-         return view('agenda.invitados.calendario1');
+        $profesor_id = Profesor::where('usuario_id', Auth::user()->id)->get();
+        $usuarioIdProfesor = Auth::user()->id;
+        $profesores = Actividades_Asignadas::where('profesor_id', $profesor_id[0]->id)->get()->load('usuario');
+        $usuarios = $this->formateoDatosAlumnos($profesores);
+        return view('agenda.invitados.calendario1', compact('usuarios','usuarioIdProfesor'));
     }
 
 	/**
@@ -85,4 +92,12 @@ class InvitadosController extends Controller {
 		//
 	}
 
+    //Paso los datos a un array para porder levantarlo con el select de Alumnos
+    public function formateoDatosAlumnos($datos){
+
+        foreach ($datos as $dato){
+            $conFormato[$dato->usuario->id] = $dato->usuario->name;
+        }
+        return $conFormato;
+    }
 }

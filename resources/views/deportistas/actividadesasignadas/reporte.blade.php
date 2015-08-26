@@ -20,21 +20,17 @@
                                 <tbody>
                                     @foreach($actividades as $actividad)
                                     <tr>
-                                        <td>{{$actividad->usuario->name}}</td>
-                                        <td>{{$actividad->actividad->nombre}}</td>
-                                        @if (isset($actividad->profesor->nombre))
-                                            <td>{{$actividad->profesor->nombre}}</td>
-                                        @else
-                                            <td>Fue Eliminado</td>
-                                        @endif
-                                        <td>{{$actividad->fecha}}</td>
-                                        <td>{{$actividad->costo}}</td>
+                                        <td>{{$actividad['alumno']}}</td>
+                                        <td>{{$actividad['actividad']}}</td>
+                                        <td>{{$actividad['profesor']}}</td>
+                                        <td>{{$actividad['fecha']}}</td>
+                                        <td>{{$actividad['costo']}}</td>
 
                                         <td>
-                                            {!! HTML::linkRoute('actividades_asignadas.edit', ' Editar', $actividad->id , ['class' => 'btn btn-primary'] ) !!}
-                                            {!! HTML::linkRoute('actividades_asignadas.destroy', ' Borrar', $actividad->id , ['class' => 'btn btn-danger', 'data-method' => 'DELETE','data-confirm' => '¿Seguro desea eliminar la Actividad ' . $actividad->nombre . '?', 'rel' => 'nofollow']) !!}
-                                            {!! HTML::linkRoute('agenda.index', 'Asistencia', ['actividad_id' => $actividad->id] , ['class' => 'btn btn-primary'] ) !!}
-                                            {!! HTML::linkRoute('pagos.index', 'Pagos', ['actividad_id' => $actividad->id] , ['class' => 'btn btn-primary'] ) !!}
+                                            {!! HTML::linkRoute('actividades_asignadas.edit', ' Editar', $actividad['id'] , ['class' => 'btn btn-primary'] ) !!}
+                                            {!! HTML::linkRoute('actividades_asignadas.destroy', ' Borrar', $actividad['id'] , ['class' => 'btn btn-danger', 'data-method' => 'DELETE','data-confirm' => '¿Seguro desea eliminar la Actividad ' . $actividad['actividad'] . '?', 'rel' => 'nofollow']) !!}
+                                            {!! HTML::linkRoute('agenda.index', 'Asistencia', ['actividad_id' => $actividad['id']] , ['class' => 'btn btn-primary'] ) !!}
+                                            {!! HTML::linkRoute('pagos.index', 'Pagos', ['actividad_id' => $actividad['id']] , ['class' => 'btn btn-primary'] ) !!}
                                         </td>
                                     </tr>
                                     @endforeach
