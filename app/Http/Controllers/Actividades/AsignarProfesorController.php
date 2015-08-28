@@ -55,7 +55,7 @@ class AsignarProfesorController extends Controller {
             'actividad_id' => Input::get('actividad_id'),
             'usuario_id' => Input::get('profesor_id')
         ]);
-        return redirect()->route('profesor.index');
+        return redirect()->route('asignarprofesor.index');
     }
 
     /**
@@ -101,7 +101,7 @@ class AsignarProfesorController extends Controller {
     {
         $profesor = Profesor::find($id);
         $profesor->delete();
-        return redirect()->route('profesor.index');
+        return redirect()->route('asignarprofesor.index');
     }
 
     public function formateoDatos($datos){
