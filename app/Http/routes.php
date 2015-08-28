@@ -26,9 +26,7 @@ Route::controllers([
 	'password' => 'Auth\PasswordController',
 ]);
 
-Route::group(['middleware' => 'role.profe'], function() {
-    Route::get('/', 'Actividades\ActividadesController@index');
-});
+Route::get('/', 'HomeController@index');
 
 //Vista y ABM Actividades
 Route::resource('actividad', 'Actividades\ActividadesController');
