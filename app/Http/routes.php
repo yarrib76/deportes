@@ -32,8 +32,10 @@ Route::group(['middleware' => 'role.profe'], function() {
 
 //Vista y ABM Actividades
 Route::resource('actividad', 'Actividades\ActividadesController');
+Route::resource('asignarprofesor', 'Actividades\AsignarProfesorController');
+
 //Vista y ABM Proferores
-Route::resource('profesor', 'Profesores\ProfesoresController');
+Route::get('profesor/agenda',['as' => 'profesor.agenda', 'uses' => 'Profesores\ProfesoresController@agenda']);
 
 //Vista y ABM Agenda
 Route::resource('agenda', 'Agenda\AgendaController');
@@ -44,9 +46,6 @@ Route::resource('pagos', 'Deportistas\Pagos\PagosController');
 //Vista y ABM ActividadesAsignadas
 Route::resource('actividades_asignadas', 'Deportistas\ActividadesAsignadas\ActividadesAsignadasController');
 Route::get('actividades_asignadas_miUsuario', 'Deportistas\ActividadesAsignadas\ActividadesAsignadasController@indexMiUsuario');
-
-//Vista Invitados
-Route::get('invitados',['as' => 'invitados.index', 'uses' => 'Invitados\InvitadosController@index']);
 
 Route::group(['prefix' => 'api'],
     function () {

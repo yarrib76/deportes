@@ -22,7 +22,7 @@
                 </a>
                 <ul class="dropdown-menu">
                     <li><a href="/actividad"> Crear </a></li>
-                    <li><a href="/profesor"> Asignar a un Profesor </a></li>
+                    <li><a href="/asignarprofesor"> Asignar a un Profesor </a></li>
                 </ul>
             </li>
             <li class="dropdown">
@@ -38,6 +38,14 @@
                             <li><a href="/actividades_asignadas">Todos Los Usuarios</a></li>
                         </ul>
                     </li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle fa fa-btn" data-toggle="dropdown">
+                    Profesores <b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a href="/profesor/agenda"> Agenda </a></li>
                 </ul>
             </li>
         </ul>
