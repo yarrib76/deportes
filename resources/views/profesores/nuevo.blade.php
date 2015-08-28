@@ -8,7 +8,7 @@
                         <div class="panel-body">
                             @include('errors.basic')
 
-                            {!! Form::open(['class' => 'form-horizontal', 'route' => ['profesor.store'] ]) !!}
+                            {!! Form::open(['class' => 'form-horizontal', 'route' => ['asignarprofesor.store'] ]) !!}
                                 @include('profesores.form')
                             <div class="col-sm-offset-3 col-sm-3">
                                 <button type="submit" class="btn btn-primary" name="agregar"><i class="fa fa-btn fa-plus"></i> Agregar</button>

@@ -17,13 +17,13 @@
                                         <td>{{$profesor->usuario->name}}</td>
                                         <td>{{$profesor->actividad->nombre}}</td>
                                         <td>
-                                            {!! HTML::linkRoute('profesor.edit', ' Editar', $profesor->id , ['class' => 'btn btn-primary'] ) !!}
-                                            {!! HTML::linkRoute('profesor.destroy', ' Borrar', $profesor->id , ['class' => 'btn btn-danger', 'data-method' => 'DELETE','data-confirm' => '¿Seguro desea eliminar el profesro ' . $profesor->nombre . '?', 'rel' => 'nofollow']) !!}
+                                            {!! HTML::linkRoute('asignarprofesor.edit', ' Editar', $profesor->id , ['class' => 'btn btn-primary'] ) !!}
+                                            {!! HTML::linkRoute('asignarprofesor.destroy', ' Borrar', $profesor->id , ['class' => 'btn btn-danger', 'data-method' => 'DELETE','data-confirm' => '¿Seguro desea eliminar el profesro ' . $profesor->nombre . '?', 'rel' => 'nofollow']) !!}
                                         </td>
                                     </tr>
                                     @endforeach
                             </table>
-                            {!! HTML::linkRoute('profesor.create', ' Asignar ', null , ['class' => 'btn btn-primary'] ) !!}
+                            {!! HTML::linkRoute('asignarprofesor.create', ' Asignar ', null , ['class' => 'btn btn-primary'] ) !!}
                     </div>
                 </div>
             </div>
