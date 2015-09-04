@@ -37,6 +37,7 @@ class trackUserLogin {
         TrackLogin::create([
             'ultimo_login' => date('Y-m-d H:i:s'),
             'user_id' => Auth::user()->id,
+            'ip_cliente' => $_SERVER['REMOTE_ADDR'],
         ]);
     }
 }

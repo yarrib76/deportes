@@ -11,6 +11,7 @@
                                     <tr>
                                         <th>Usuario</th>
                                         <th>Ultimo Login</th>
+                                        <th>Ip Client</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -18,6 +19,7 @@
                                         <tr>
                                             <td>{{$login->usuario->name}}</td>
                                             <td>{{$login->ultimo_login}}</td>
+                                            <td>{{$login->ip_cliente}}</td>
                                         </tr>
                                         @endforeach
                                 </tbody>
