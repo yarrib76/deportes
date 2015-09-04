@@ -48,5 +48,13 @@
                     <li><a href="/profesor/agenda"> Agenda </a></li>
                 </ul>
             </li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle fa fa-btn" data-toggle="dropdown">
+                    Administrador<b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a href="/administrador/tracklogins"> Logins de Usuarios </a></li>
+                </ul>
+            </li>
         </ul>
     @endif

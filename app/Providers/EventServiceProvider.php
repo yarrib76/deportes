@@ -14,6 +14,9 @@ class EventServiceProvider extends ServiceProvider {
 		'event.name' => [
 			'EventListener',
 		],
+        'auth.login' => [
+            'Deportes\Handlers\Events\trackUserLogin@onUserLogin',
+        ],
 	];
 
 	/**
