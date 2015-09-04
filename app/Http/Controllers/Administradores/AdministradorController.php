@@ -3,11 +3,15 @@
 use Deportes\Http\Requests;
 use Deportes\Http\Controllers\Controller;
 
+use Deportes\User;
+use Deportes\Usuarios\TrackLogin;
 use Illuminate\Http\Request;
 
 class AdministradorController extends Controller {
 
     public function trackLogins(){
-        dd('Hola Mundo');
+       // $usuarios = User::lists('id','name');
+        $trackLogins = TrackLogin::all()->load('usuario');
+        return view('administrador.reporte', compact('trackLogins'));
 	}
 }

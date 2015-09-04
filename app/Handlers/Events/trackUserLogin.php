@@ -33,6 +33,7 @@ class trackUserLogin {
      * Guardo el Track del login de los usuarios
      */
     public function onUserLogin(){
+        date_default_timezone_set('america/argentina/buenos_aires');
         TrackLogin::create([
             'ultimo_login' => date('Y-m-d H:i:s'),
             'user_id' => Auth::user()->id,

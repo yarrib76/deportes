@@ -8,4 +8,8 @@ class TrackLogin extends Model {
     protected $fillable =['ultimo_login','user_id'];
     public $timestamps = false;
 
+    public function usuario(){
+
+        return $this->belongsTo('Deportes\User', 'user_id');
+    }
 }

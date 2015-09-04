@@ -26,7 +26,7 @@ Route::controllers([
 	'password' => 'Auth\PasswordController',
 ]);
 
-Route::get('/', 'HomeController@index');
+Route::get('/', ['as' => 'home', 'uses' => 'HomeController@index']);
 
 //Administradores
 route::get('administrador/tracklogins', ['as' => 'administrador.tracklogins', 'uses' => 'Administradores\AdministradorController@trackLogins']);
