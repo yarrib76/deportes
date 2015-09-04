@@ -28,6 +28,9 @@ Route::controllers([
 
 Route::get('/', 'HomeController@index');
 
+//Administradores
+route::get('administrador/tracklogins', ['as' => 'administrador.tracklogins', 'uses' => 'Administradores\AdministradorController@trackLogins']);
+
 //Vista y ABM Actividades
 Route::resource('actividad', 'Actividades\ActividadesController');
 Route::resource('asignarprofesor', 'Actividades\AsignarProfesorController');

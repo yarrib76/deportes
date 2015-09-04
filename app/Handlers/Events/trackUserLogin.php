@@ -1,7 +1,10 @@
 <?php namespace Deportes\Handlers\Events;
 
+use Deportes\Usuarios\TrackLogin;
+use Faker\Provider\DateTime;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldBeQueued;
+use Illuminate\Support\Facades\Auth;
 
 class trackUserLogin {
 
@@ -30,6 +33,9 @@ class trackUserLogin {
      * Guardo el Track del login de los usuarios
      */
     public function onUserLogin(){
-
+        TrackLogin::create([
+            'ultimo_login' => date('Y-m-d H:i:s'),
+            'user_id' => Auth::user()->id,
+        ]);
     }
 }
