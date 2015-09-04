@@ -17,6 +17,6 @@ class AdministradorController extends Controller {
     public function trackLogins(){
        // $usuarios = User::lists('id','name');
         $trackLogins = TrackLogin::all()->load('usuario');
-        return view('administrador.reporte', compact('trackLogins'));
+        return view('Administrador.reporte', compact('trackLogins'));
 	}
 }
