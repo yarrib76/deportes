@@ -8,6 +8,11 @@ use Deportes\Usuarios\TrackLogin;
 use Illuminate\Http\Request;
 
 class AdministradorController extends Controller {
+    public function __construct()
+    {
+        $this->middleware('auth');
+        $this->middleware('role.admin');
+    }
 
     public function trackLogins(){
        // $usuarios = User::lists('id','name');

@@ -53,7 +53,7 @@
                     Administrador<b class="caret"></b>
                 </a>
                 <ul class="dropdown-menu">
-                    <li><a href="administrador/tracklogins"> Logins de Usuarios </a></li>
+                    <li><a href="/administrador/tracklogins"> Logins de Usuarios </a></li>
                 </ul>
             </li>
         </ul>

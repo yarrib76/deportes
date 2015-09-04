@@ -29,6 +29,7 @@ class Kernel extends HttpKernel {
 		'guest' => 'Deportes\Http\Middleware\RedirectIfAuthenticated',
         'role.profe' => 'Deportes\Http\Middleware\RoleProfeMiddleware',
         'role.alumno' => 'Deportes\Http\Middleware\RoleAlumnoMiddleware',
+        'role.admin' => 'Deportes\Http\Middleware\RoleAdminMiddleware',
 	];
 
 }
