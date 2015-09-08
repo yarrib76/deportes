@@ -58,7 +58,7 @@
                             infoPostFix:    "",
                             loadingRecords: "Chargement en cours...",
                             zeroRecords:    "No se encontraron logins registrados para esa busqueda",
-                            emptyTable:     "No existen usuarios asignadas",
+                            emptyTable:     "No existen logins registrados",
                             paginate: {
                                 first:      "Primero",
                                 previous:   "Anterior",
