@@ -25,6 +25,7 @@
                                 </tbody>
                             </table>
                             {!! HTML::linkRoute('home', ' Volver ', null , ['class' => 'btn btn-primary'] ) !!}
+                            {!! HTML::linkRoute('administrador.borrarlogins', ' Borrar Logins ', null , ['class' => 'btn btn-danger'] ) !!}
                     </div>
                 </div>
             </div>
@@ -56,7 +57,7 @@
                             infoFiltered:   "(Filtrando _MAX_ usuarios en total)",
                             infoPostFix:    "",
                             loadingRecords: "Chargement en cours...",
-                            zeroRecords:    "No se encontraron usuarios asignadas para esa busqueda",
+                            zeroRecords:    "No se encontraron logins registrados para esa busqueda",
                             emptyTable:     "No existen usuarios asignadas",
                             paginate: {
                                 first:      "Primero",

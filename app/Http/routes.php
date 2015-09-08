@@ -30,6 +30,7 @@ Route::get('/', ['as' => 'home', 'uses' => 'HomeController@index']);
 
 //Administradores
 route::get('administrador/tracklogins', ['as' => 'administrador.tracklogins', 'uses' => 'Administradores\AdministradorController@trackLogins']);
+route::get('administrador/borrarlogins', ['as' => 'administrador.borrarlogins', 'uses' => 'Administradores\AdministradorController@borrarLogins']);
 
 //Vista y ABM Actividades
 Route::resource('actividad', 'Actividades\ActividadesController');
