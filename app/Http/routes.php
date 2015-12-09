@@ -57,4 +57,5 @@ Route::group(['prefix' => 'api'],
         Route::get('/agendaProfesores', 'Api\ControladorAgendaProfesores@listaCalendario');
         Route::get('/pagos', 'Api\ControladorPagos@listaPagos');
         Route::get('/usuarios', 'Api\ControladorUsuarios@listaUsuarios');
+        Route::get('/loginmovil', 'Api\ControladorLogin@loginUsuarios');
     });

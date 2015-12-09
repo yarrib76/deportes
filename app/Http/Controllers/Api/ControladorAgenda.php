@@ -21,7 +21,7 @@ class ControladorAgenda extends Controller{
         }
         $agenda = Agenda::where('actividadAsignada_id', Input::get('actividadAsignada_id'))->get();
         $agendaFinal = $this->cambioTitle($agenda);
-       return Response::json($agendaFinal);
+        return Response::json($agendaFinal);
     }
 
     /**
