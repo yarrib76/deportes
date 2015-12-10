@@ -20,12 +20,12 @@ class ControladorLogin extends Controller {
         $repuesta=[];
         $datos = User::where("email",$email)->first();
         if (!$datos){
-            return $repuesta[0] = ['valor' => 'usr_1'];
+            return $repuesta[0] = ['valor' => 0];
         }else{
             if (Hash::check($password, $datos->password)){
                 return $repuesta[0] = ['valor' => $datos->id];
             }
-            return $repuesta[0]= ['valor' => 'pwd_1'];
+            return $repuesta[0]= ['valor' => 0];
         }
     }
 
