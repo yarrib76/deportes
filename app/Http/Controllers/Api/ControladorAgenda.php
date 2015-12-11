@@ -15,9 +15,16 @@ class ControladorAgenda extends Controller{
     public function listaCalendario(){
         if (Input::get('usuario_id')) {
             $usuario = User::find(Input::get('usuario_id'));
-            $actividadAsignada = $usuario->actividadesAsignadas()->get()->load('agenda', 'actividad');
-            $agendaFinal = $this->preparoJson($actividadAsignada);
-            return Response::json($agendaFinal);
+            if (Input::get('fecha')){
+                $actividadAsignada = $usuario->actividadesAsignadas()->get()->load(array('agenda' =>
+                    function ($query){
+                        $query->where('start',Input::get('fecha'))->get();
+                    }, 'actividad'));
+            }else {
+                $actividadAsignada = $usuario->actividadesAsignadas()->get()->load('agenda', 'actividad');
+            }
+                $agendaFinal = $this->preparoJson($actividadAsignada);
+                return Response::json($agendaFinal);
         }
         $agenda = Agenda::where('actividadAsignada_id', Input::get('actividadAsignada_id'))->get();
         $agendaFinal = $this->cambioTitle($agenda);
